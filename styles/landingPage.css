@@ -1,12 +1,11 @@
+/* Style untuk Halaman Landing Page */
 body {
     font-family: "Nunito", "sans-serif";
     margin: 0;
     padding: 0;
+    background-color: #73B385;
 }
 
-/* Style untuk Halaman Landing Page */
-.landingPage {
-    background-color: #73B385;
 /* Style untuk Header */
 header {
     position: fixed;
@@ -45,13 +44,13 @@ button img {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: none; /* Initially hidden */
+    display: none;
     background-color: #73B385;
     backdrop-filter: blur(2px);
     position: absolute;
-    top: 45px; /* Adjust based on header position */
-    right: 0px; /* Align to the right */
-    width: 130px; /* Adjust width as needed */
+    top: 45px;
+    right: 0px;
+    width: 130px;
     border: 1px solid #5B8E69;
     border-radius: 10px 0px 0px 10px;
     box-shadow: 0px 3px 2px 0px #79767672;
@@ -62,11 +61,22 @@ button img {
     text-align: right;
     font-size: 10px;
     font-weight: lighter;
-    border-bottom: 1px solid #629972; /* Light border line */
+}
+
+.burgerMenu li:first-child {
+    border-radius: 10px 0px 0px 0px;
 }
 
 .burgerMenu li:last-child {
-    border-bottom: none; /* Remove border from the last item */
+    border-radius: 0px 0px 0px 10px;
+}
+
+.burgerMenu hr {
+    border: none;
+    height: 0.5px;
+    width: 90px;
+    background-color: #5B8E69;
+    margin: 0 auto;
 }
 
 .burgerMenu li:hover {
@@ -350,143 +360,6 @@ footer ul li {
 .copyright {
     margin-top: 60px;
     text-align: center;
-}
-}
-
-/* Style untuk Halaman Form Data Diri */
-.formDataDiri {
-    /* styles.css */
-
-    body {
-        font-family: 'Nunito', sans-serif;
-        background-color: #f0f0f0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0;
-        height: 100vh;
-    }
-
-    .header {
-        background-color: #263238;
-        color: white;
-        padding: 10px 30px 0px 30px;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .header h1 {
-        font-size: 14px;
-    }
-
-    .menu-icon {
-        font-size: 18px;
-        cursor: pointer;
-        background-color: rgb(0, 0, 0, 0);
-        border: none;
-    }
-
-
-    #personal-data-form {
-        background-color: rgb(102, 159, 118, 0.3);
-        backdrop-filter: blur(2px);
-        border-radius: 20px;
-        padding: 20px;
-    }
-
-    .form-container {
-        background: #ffffff;
-        border: 2px solid #73B385;
-        border-radius: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        width: auto;
-        margin: 30px;
-    }
-
-    h2 {
-        text-align: left;
-        color: #333333;
-        font-size: 10px;
-    }
-
-    .form-group {
-        margin-bottom: 10px;
-        display: flex;
-        justify-content: center;
-    }
-
-    input {
-        border: 1px solid #73B385;
-        border-radius: 20px;
-        padding: 10px;
-        width: 100%;
-        box-sizing: border-box;
-        font-size: 10px;
-    }
-
-    input::placeholder {
-        color: #cccccc;
-    }
-
-    .button-container {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .submit {
-        background-color: #5B8E69;
-        border: 2px solid #73B385;
-        border-radius: 20px;
-        color: white;
-        padding: 6px;
-        font-size: 10px;
-        width: 80px;
-        cursor: pointer;
-    }
-
-    .submit:hover {
-        background-color: #6fa064;
-    }
-
-
-    /* Style untuk Footer */
-    footer {
-        background-color: #455a64;
-        color: white;
-        padding: 30px;
-    }
-    footer h3 {
-        font-size: 14px;
-    }
-
-    footer p {
-        font-size: 10px;
-        margin: auto;
-    }
-
-    footer ul {
-        display: flex;
-        list-style-type: none;
-        padding: 0%;
-        margin: 10px;
-    }
-
-    footer ul li {
-        display: flex;
-        gap: 10px;
-    }
-
-    .kontakPengembang {
-        padding-top: 20px;
-    }
-
-    .copyright {
-        margin-top: 60px;
-        text-align: center;
-    }
 }
 
 

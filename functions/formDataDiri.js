@@ -1,7 +1,3 @@
-document.getElementById('btnKonsultasi').addEventListener('click', function() {
-    window.location.href = "formDataDiri.html";
-});
-  
 document.getElementById("burgerButton").addEventListener("click", function() {
     var menu = document.getElementById("burgerMenu");
     var overlay = document.getElementById("overlay");
@@ -9,13 +5,8 @@ document.getElementById("burgerButton").addEventListener("click", function() {
     overlay.classList.toggle("active");
 });
 
-// script.js
-
 document.getElementById('personal-data-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting the traditional way
-    // You can add your form validation and submission code here
+    event.preventDefault();
     alert('Form submitted!');
+    window.location.href = "formDataGejala.html";
 });
-
-
-
