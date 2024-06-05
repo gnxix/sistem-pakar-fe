@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+        </style>
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>SIPAKAR</title>
+</head>
+<body class="landingPage">
+    <header>
+        <h1>SIPAKAR</h1>
+        <button id="burgerButton">
+            <img src="./assets/mdi-light_menu.svg" alt="Menu">
+        </button>
+        <ul class="burgerMenu" id="burgerMenu">
+            <li>Beranda</li>
+            <li>Tentang SIPAKAR</li>
+            <li>Informasi Penyakit</li>
+        </ul>
+    </header>
+
+    <main>
+        <div class="beranda">
+            <h2>
+                SISTEM PAKAR DIAGNOSIS AWAL PENYAKIT LAMBUNG
+            </h2>
+            <div>
+                <p>
+                    Yuk, segera cek kesehatan lambungmu disini. Dapatkan berbagai informasi terkait kesehatan lambung berdasarkan gejalamu dengan klik konsultasi di bawah ini.
+                </p>
+                <div>
+                    <button id="btnKonsultasi">
+                        <p>
+                            KONSULTASI
+                        </p>
+                    </button>
+                    <script src="./styles/script.js"></script>
+                    <img src="./assets/pana.svg" alt="">
+                </div>
+            </div>
+            <img src="./assets/Vector 3.svg" alt="" class="vector1">
+            <img src="./assets/Vector 3 (1).svg" alt="" class="vector2">
+        </div>
+
+        <div class="ttgSIPAKAR">
+            <img src="./assets/stomachache.svg" alt="" class="stomachache">
+            <div class="tentang">
+                <h3>
+                    TENTANG SIPAKAR
+                </h3>
+                <p>
+                    SIPAKAR adalah aplikasi sistem pakar untuk diagnosa awal penyakit lambung. Aplikasi ini menggunakan metode forward chaining untuk memulai dari gejala yang dilaporkan dan menerapkan aturan-aturan medis untuk mencapai diagnosa. Metode certainty factor digunakan untuk menangani ketidakpastian dengan memberikan nilai kepastian pada setiap diagnosa. Pengguna memasukkan gejala, sistem memproses dan menghitung kepastian, lalu memberikan hasil diagnosa dengan tingkat keyakinan tertentu. Dengan demikian, SIPAKAR membantu pengguna memahami kondisi lambung mereka secara cepat dan akurat.
+                </p>
+            </div>
+        </div>
+
+        <div class="infopenyakit">
+            <h3>
+                INFORMASI PENYAKIT
+            </h3>
+            <div class="barpenyakit">
+                <ul class="scroll-container">
+                    <li>Dispepsia</li>
+                    <li>Gastritis</li>
+                    <li>GERD</li>
+                    <li>Gastroparesis</li>
+                    <li>Gastroenteritis</li>
+                    <li>Polip</li>
+                    <li>Tukak</li>
+                    <li>Kanker</li>
+                </ul>
+                <hr class="custom-hr">
+                <div>
+                    <div class="flex1">
+                        <img src="./assets/Dispepsia.jpg" alt="">
+                        <div>
+                            <h4>
+                                Nama Penyakit
+                            </h4>
+                            <p>
+                                Dispepsia
+                            </p>
+                            <h4>
+                                Penyebab
+                            </h4>
+                            <p>
+                                Helicobacter Pylori
+                            </p>
+                            <h4>
+                                Gejala Penyakit
+                            </h4>
+                            <p>
+                                Mual, muntah, nyeri pada ulu hati, kembung, anemia.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex2">
+                        <h4>
+                            Cara Mencegah Penyakit
+                        </h4>
+                        <p>
+                            Menjaga pola makan, hindari makanan pedas dan asam, hindari minuman bersoda dan beralkohol. Pastikan untuk memiliki nutrisi harian yang tercukupi terutama Protein, Kalori, dan Lemak.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="overlay"></div>
+
+    <footer>
+       <div>
+        <h3>SIPAKAR</h3>
+        <p>
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+       </div>
+       <div class="kontakPengembang">
+        <h3>
+            Kontak Pengembang
+        </h3>
+        <p>
+            Gabrielle Natasha Arla Frederica
+        </p>
+        <ul>
+            <li>
+                <img src="./assets/icon-mail.svg" alt="">
+                <p>
+                    arlarumbayan@gmail.com
+                </p>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <img src="./assets/icon-instagram.svg" alt="">
+                <p>
+                    g_fxix
+                </p>
+            </li>
+        </ul>
+       </div>
+       <div class="copyright">
+        <p>
+            Copyright ©️ 2024 • SIPAKAR 
+        </p>
+       </div>
+    </footer>
+</body>
+</html>

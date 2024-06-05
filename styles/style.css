@@ -1,0 +1,521 @@
+body {
+    font-family: "Nunito", "sans-serif";
+    margin: 0;
+    padding: 0;
+}
+
+/* Style untuk Halaman Landing Page */
+.landingPage {
+    background-color: #73B385;
+/* Style untuk Header */
+header {
+    position: fixed;
+    height: 40px;
+    display: flex;
+    background-color: #73B385;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px 0 30px;
+    z-index: 100;
+    box-shadow: 0px 4px 5px 0px #79767672;
+    border-radius: 0 0 10px 10px;
+    transition: height 0.3s;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+h1 {
+    font-size: 14px;
+}
+
+button {
+    background-color:  rgb(102, 159, 118, 0);
+    border-style: none;
+    cursor: pointer;
+}
+
+button img {
+    width: 25px;
+    height: auto;
+}
+
+.burgerMenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Initially hidden */
+    background-color: #73B385;
+    backdrop-filter: blur(2px);
+    position: absolute;
+    top: 45px; /* Adjust based on header position */
+    right: 0px; /* Align to the right */
+    width: 130px; /* Adjust width as needed */
+    border: 1px solid #5B8E69;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 0px 3px 2px 0px #79767672;
+}
+
+.burgerMenu li {
+    padding: 10px 30px 10px 5px;
+    text-align: right;
+    font-size: 10px;
+    font-weight: lighter;
+    border-bottom: 1px solid #629972; /* Light border line */
+}
+
+.burgerMenu li:last-child {
+    border-bottom: none; /* Remove border from the last item */
+}
+
+.burgerMenu li:hover {
+    background-color:rgb(102, 159, 118, 1);
+}
+
+.burgerMenu li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.burgerMenu.active {
+    display: block; /* Display menu when active class is added */
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(115, 179, 133, 0.5px); /* Semi-transparent background */
+    backdrop-filter: blur(2px); /* Apply blur effect */
+    z-index: 5; /* Behind the content and menu */
+    display: none; /* Initially hidden */
+}
+
+#overlay.active {
+    display: block; /* Show overlay when active class is added */
+}
+
+ul {
+    display: none;
+}
+
+/* Style untuk Beranda */
+.beranda {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #73B385;
+    color: white;
+    margin-top: 80px;
+    padding: 0 30px 0 30px;
+    gap: 15px;
+}
+
+.beranda h2 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.beranda div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.beranda div div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.beranda p {
+    padding-right: 20px;
+    font-size: 9px;
+    margin: 0;
+}
+
+.beranda button {
+    width: 90px;
+    height: 24px;
+    background-color: #5B8E69;
+    border-radius: 10px;
+    font-family: "Nunito", "sans-serif";
+    font-weight: 800;
+    border-color: #73B385;
+    color: white;
+    box-shadow: 0px 3px 1px 0px #79767672;
+    border-style: solid;
+    margin-left: 20px;
+}
+
+.beranda div div button p {
+    padding: 0;
+}
+
+.beranda div div img {
+    position: static;
+    align-self: flex-end;
+    width: 130px;
+}
+
+.vector1 {
+    position: absolute;
+    width: 80px;
+    top: 155px;
+    left: 0%;
+}
+
+.vector2 {
+    position: absolute;
+    width: 80px;
+    top: 10px;
+    right: 0%;
+}
+
+/* Style untuk Tentang SIPAKAR */
+.ttgSIPAKAR {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 20px 20px 0px 20px;
+    position: relative;
+    text-align: center;
+}
+
+.ttgSIPAKAR img.stomachache {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 150px;
+    height: auto;
+}
+
+.ttgSIPAKAR div {
+    position: relative;
+    z-index: 2; 
+    background-color: rgb(102, 159, 118, 0.3);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.ttgSIPAKAR h3 {
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.ttgSIPAKAR p {
+    font-size: 8px;
+    text-align: justify;
+    font-weight: 600;
+    line-height: 160%;
+}
+
+
+/* Style untuk Informasi Penyakit */
+.infopenyakit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 20px;
+}
+
+.infopenyakit h3 {
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.barpenyakit {
+    z-index: 2; 
+    background-color: rgb(102, 159, 118, 0.3);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+}
+
+.barpenyakit ul {
+    display: flex;
+    list-style-type: none;
+    gap: 8px;
+    font-size: 10px;
+    width: 240px;
+    height: fit-content;
+    overflow-x: scroll;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.barpenyakit ul::-webkit-scrollbar {
+    display: none;
+}
+
+.barpenyakit ul li {
+    width: fit-content;
+    height: fit-content;
+    align-content: center;
+}
+
+.custom-hr {
+    border: none;
+    height: 0.5px;
+    width: 250px;
+    background-color: #263238;
+    margin: 0 auto;
+}
+
+.flex1 {
+    font-size: 8px;
+    display: flex;
+    margin: 20px 20px 0px 20px;
+    gap: 10px;
+}
+
+.flex1 h4 {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-size: 9px;
+}
+
+.flex1 p {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.flex1 img {
+    height: 100px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 1px 2px #79767672;
+}
+
+.flex2 {
+    font-size: 9px;
+    padding: 0px 20px 20px 20px;
+    margin-top: 10px;
+}
+
+.flex2 h4 {
+    margin: 0;
+}
+
+.flex2 p {
+    margin-bottom: 0px;
+}
+
+
+/* Style untuk Footer */
+footer {
+    background-color: #455a64;
+    color: white;
+    padding: 30px;
+}
+footer h3 {
+    font-size: 14px;
+}
+
+footer p {
+    font-size: 10px;
+    margin: auto;
+}
+
+footer ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0%;
+    margin: 10px;
+}
+
+footer ul li {
+    display: flex;
+    gap: 10px;
+}
+
+.kontakPengembang {
+    padding-top: 20px;
+}
+
+.copyright {
+    margin-top: 60px;
+    text-align: center;
+}
+}
+
+/* Style untuk Halaman Form Data Diri */
+.formDataDiri {
+    /* styles.css */
+
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        height: 100vh;
+    }
+
+    .header {
+        background-color: #263238;
+        color: white;
+        padding: 10px 30px 0px 30px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .header h1 {
+        font-size: 14px;
+    }
+
+    .menu-icon {
+        font-size: 18px;
+        cursor: pointer;
+        background-color: rgb(0, 0, 0, 0);
+        border: none;
+    }
+
+
+    #personal-data-form {
+        background-color: rgb(102, 159, 118, 0.3);
+        backdrop-filter: blur(2px);
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .form-container {
+        background: #ffffff;
+        border: 2px solid #73B385;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        width: auto;
+        margin: 30px;
+    }
+
+    h2 {
+        text-align: left;
+        color: #333333;
+        font-size: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    input {
+        border: 1px solid #73B385;
+        border-radius: 20px;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 10px;
+    }
+
+    input::placeholder {
+        color: #cccccc;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .submit {
+        background-color: #5B8E69;
+        border: 2px solid #73B385;
+        border-radius: 20px;
+        color: white;
+        padding: 6px;
+        font-size: 10px;
+        width: 80px;
+        cursor: pointer;
+    }
+
+    .submit:hover {
+        background-color: #6fa064;
+    }
+
+
+    /* Style untuk Footer */
+    footer {
+        background-color: #455a64;
+        color: white;
+        padding: 30px;
+    }
+    footer h3 {
+        font-size: 14px;
+    }
+
+    footer p {
+        font-size: 10px;
+        margin: auto;
+    }
+
+    footer ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0%;
+        margin: 10px;
+    }
+
+    footer ul li {
+        display: flex;
+        gap: 10px;
+    }
+
+    .kontakPengembang {
+        padding-top: 20px;
+    }
+
+    .copyright {
+        margin-top: 60px;
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 600px) {
+
+    /* Style untuk Header */
+    header {
+        height: 45px;
+        padding: 0 50px 0 50px;
+        box-shadow: 0px 6px 5px 0px #79767672;
+        transition: height 0.3s;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    button img {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        gap: 30px;
+    }
+    ul li {
+        font-size: 10px;
+    }
+
+    /* Style untuk Beranda */
+}
