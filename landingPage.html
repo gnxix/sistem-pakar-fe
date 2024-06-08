@@ -16,20 +16,26 @@
             <img src="./assets/mdi-light_menu.svg" alt="Menu">
         </button>
         <ul class="burgerMenu" id="burgerMenu">
-            <li>Beranda</li>
+            <a href="#beranda">
+                <li>Beranda</li>
+            </a>
             <hr class="custom-hr">
-            <li>Tentang SIPAKAR</li>
+            <a href="#ttgSIPAKAR">
+                <li>Tentang SIPAKAR</li>
+            </a>
             <hr class="custom-hr">
-            <li>Informasi Penyakit</li>
+            <a href="#infopenyakit">
+                <li>Informasi Penyakit</li>
+            </a>
         </ul>
     </header>
 
     <main>
-        <div class="beranda">
+        <div id="beranda" class="beranda">
             <h2>
                 SISTEM PAKAR DIAGNOSIS AWAL PENYAKIT LAMBUNG
             </h2>
-            <div>
+            <div class="mobile">
                 <p>
                     Yuk, segera cek kesehatan lambungmu disini. Dapatkan berbagai informasi terkait kesehatan lambung berdasarkan gejalamu dengan klik konsultasi di bawah ini.
                 </p>
@@ -42,11 +48,26 @@
                     <img src="./assets/pana.svg" alt="">
                 </div>
             </div>
+            <div class="web">
+                <div class="web-body">
+                    <p>
+                        Yuk, segera cek kesehatan lambungmu disini. Dapatkan berbagai informasi terkait kesehatan lambung berdasarkan gejalamu dengan klik konsultasi di bawah ini.
+                    </p>
+                    <button id="btnKonsultasi">
+                        <p>
+                            KONSULTASI
+                        </p>
+                    </button>
+                </div>
+                <div>
+                    <img src="./assets/pana.svg" alt="">
+                </div>
+            </div>
             <img src="./assets/Vector 3.svg" alt="" class="vector1">
             <img src="./assets/Vector 3 (1).svg" alt="" class="vector2">
         </div>
 
-        <div class="ttgSIPAKAR">
+        <div id="ttgSIPAKAR" class="ttgSIPAKAR">
             <img src="./assets/stomachache.svg" alt="" class="stomachache">
             <div class="tentang">
                 <h3>
@@ -58,20 +79,21 @@
             </div>
         </div>
 
-        <div class="infopenyakit">
+        <div id="infopenyakit" class="infopenyakit">
             <h3>
                 INFORMASI PENYAKIT
             </h3>
             <div class="barpenyakit">
                 <ul class="scroll-container">
+                    <a href=""></a>
                     <li>Dispepsia</li>
                     <li>Gastritis</li>
                     <li>GERD</li>
                     <li>Gastroparesis</li>
                     <li>Gastroenteritis</li>
-                    <li>Polip</li>
-                    <li>Tukak</li>
-                    <li>Kanker</li>
+                    <li>Polip Lambung</li>
+                    <li>Tukak Lambung</li>
+                    <li>Kanker Lambung</li>
                 </ul>
                 <hr class="custom-hr">
                 <div>
@@ -117,7 +139,7 @@
        <div>
         <h3>SIPAKAR</h3>
         <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            SIPAKAR adalah aplikasi sistem pakar untuk diagnosa awal penyakit lambung. Aplikasi ini menggunakan metode forward chaining untuk memulai dari gejala yang dilaporkan dan menerapkan aturan-aturan medis untuk mencapai diagnosa. Dengan adanya SIPAKAR dapat membantu pengguna memahami kondisi lambung mereka secara cepat dan akurat.
         </p>
        </div>
        <div class="kontakPengembang">

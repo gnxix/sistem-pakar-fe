@@ -1,6 +1,6 @@
-/* Style untuk Halaman Form Data Gejala */
+/* Style untuk Halaman Konsultasi */
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", "sans-serif";
     background-color: #fff;
     margin: 0;
     padding: 0;
@@ -33,7 +33,6 @@ header h1 {
 header h2 {
     display: none;
 }
-
 
 #burgerButton {
     cursor: pointer;
@@ -71,6 +70,7 @@ header h2 {
     padding-left: 0px;
 }
 
+
 .custom-hr {
     border: none;
     height: 0.5px;
@@ -91,6 +91,7 @@ header h2 {
 .menu-item:hover {
     background-color: rgb(102, 159, 118, 1);
 }
+
 
 .burgerMenu li a {
     text-decoration: none;
@@ -122,7 +123,62 @@ ul {
     display: none;
 }
 
-/*  */
+/* Style untuk main */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin: 80px 30px 30px;
+}
+
+div > div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 14px;
+    margin: 0px 0px 20px 0px;
+}
+
+p {
+    font-size: 10px;
+    line-height: 20px;
+    margin: 0px 0px 20px 0px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+.submit {
+    font-weight: bold;
+    background-color: #5B8E69;
+    border: 2px solid #73B385;
+    border-radius: 20px;
+    color: white;
+    padding: 5px 10px;
+    font-size: 10px;
+    width: fit-content;
+    cursor: pointer;
+    font-family: "Nunito", "sans-serif";
+}
+
+.submit:hover {
+    background-color: #6fa064;
+}
+
+
 
 /* Style untuk Footer */
 footer {

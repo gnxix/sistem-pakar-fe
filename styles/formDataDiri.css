@@ -33,8 +33,6 @@ header h2 {
     display: none;
 }
 
-header
-
 #burgerButton {
     cursor: pointer;
     background-color: rgb(0, 0, 0, 0);
@@ -71,7 +69,6 @@ header
     padding-left: 0px;
 }
 
-
 .custom-hr {
     border: none;
     height: 0.5px;
@@ -84,9 +81,13 @@ header
     margin-left: 20px;
 }
 
+.menu-item {
+    padding: 10px;
+    cursor: pointer;
+}
 
-.burgerMenu li:hover {
-    background-color:rgb(102, 159, 118, 1);
+.menu-item:hover {
+    background-color: rgb(102, 159, 118, 1);
 }
 
 .burgerMenu li a {
