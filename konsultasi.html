@@ -32,21 +32,60 @@
         </ul>
         <h1>Konsultasi</h1>
     </header>
+    <aside>
+        <ul id="sideMenu" class="sideMenu">
+            <div class="namaApk">
+                <li>SIPAKAR</li>
+            </div>
+            <hr class="custom-hr">
+            <li class="menu-item">Beranda</li>
+            <li class="menu-item">Tentang SIPAKAR</li>
+            <li class="menu-item">Informasi Penyakit</li>
+            <li class="menu-item">Konsultasi</li>   
+            <div class="subKonsultasi">
+                <li class="menu-item">Form Data Diri</li>
+                <li class="menu-item">Form Data Gejala</li>
+                <li class="menu-item">Perhitungan Manual</li>
+            </div>
+            <li class="menu-item">Riwayat Konsultasi</li>
+        </ul>
+    </aside>
     <main>
         <div class="main-body">
             <h2>
                 Selamat Datang!
             </h2>
-            <div>
-                <img src="./assets/cuate.svg" alt="">
+            <div class="main">
+                <div>
+                    <img src="./assets/cuate.svg" alt="">
+                </div>
+                <p>
+                    SIPAKAR saat ini hadir untuk membantu anda dalam melakukan diagnosis awal penyakit lambung dan memberikan saran pengobatan yang anda butuhkan.
+                </p>
+                <p>
+                    Yuk, mulai konsultasinya sekarang! 
+                </p>
+                <div id="btnKonsultasi" class="button-container">
+                    <button class="submit" type="submit">MULAI KONSULTASI</button>
+                </div>
             </div>
-            <p>
-                SIPAKAR saat ini hadir untuk membantu anda dalam melakukan diagnosis awal penyakit lambung dan memberikan saran pengobatan yang anda butuhkan.
-                <br> <br>
-                Yuk, mulai konsultasinya sekarang! 
-            </p>
-            <div id="btnKonsultasi" class="button-container">
-                <button class="submit" type="submit">MULAI KONSULTASI</button>
+            <div class="main2">
+                <p>
+                    SIPAKAR saat ini hadir untuk membantu anda dalam melakukan diagnosis awal penyakit lambung dan memberikan saran pengobatan yang anda butuhkan.
+                </p>
+                <div class="isi-main2">
+                    <div class="isi-main3"> 
+                        <p>
+                            Yuk, mulai konsultasinya sekarang! 
+                        </p>
+                        <div id="btnKonsultasi2" class="button-container">
+                            <button class="submit" type="submit">MULAI KONSULTASI</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./assets/cuate.svg" alt="">
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -54,42 +93,46 @@
     <div id="overlay"></div>
 
     <footer>
-       <div>
-        <h3>SIPAKAR</h3>
-        <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        </p>
-       </div>
-       <div class="kontakPengembang">
-        <h3>
-            Kontak Pengembang
-        </h3>
-        <p>
-            Gabrielle Natasha Arla Frederica
-        </p>
-        <ul>
-            <li>
-                <img src="./assets/icon-mail.svg" alt="">
-                <p>
-                    arlarumbayan@gmail.com
-                </p>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <img src="./assets/icon-instagram.svg" alt="">
-                <p>
-                    g_fxix
-                </p>
-            </li>
-        </ul>
-       </div>
-       <div class="copyright">
-        <p>
-            Copyright ©️ 2024 • SIPAKAR 
-        </p>
-       </div>
-    </footer>
+        <div>
+         <div class="isi-footer">
+            <div class="footer-sipakar">
+             <h3>SIPAKAR</h3>
+             <p>
+                 SIPAKAR adalah aplikasi sistem pakar untuk diagnosa awal penyakit lambung. Aplikasi ini menggunakan metode forward chaining untuk memulai dari gejala yang dilaporkan dan menerapkan aturan-aturan medis untuk mencapai diagnosa. Dengan adanya SIPAKAR dapat membantu pengguna memahami kondisi lambung mereka secara cepat dan akurat.
+             </p>
+            </div>
+             <div class="kontakPengembang">
+                 <h3>
+                     Kontak Pengembang
+                 </h3>
+                 <p>
+                     Gabrielle Natasha Arla Frederica
+                 </p>
+                 <ul>
+                     <li>
+                         <img src="./assets/icon-mail.svg" alt="">
+                         <p>
+                             arlarumbayan@gmail.com
+                         </p>
+                     </li>
+                 </ul>
+                 <ul>
+                     <li>
+                         <img src="./assets/icon-instagram.svg" alt="">
+                         <p>
+                             g_fxix
+                         </p>
+                     </li>
+                 </ul>
+             </div>
+         </div>
+        </div>
+        <div class="copyright">
+         <p>
+             Copyright ©️ 2024 • SIPAKAR 
+         </p>
+        </div>
+     </footer>
 
     <script src="./functions/konsultasi.js"></script>
 </body>

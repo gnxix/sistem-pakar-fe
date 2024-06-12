@@ -8,3 +8,7 @@ document.getElementById("burgerButton").addEventListener("click", function() {
 document.getElementById('btnKonsultasi').addEventListener('click', function() {
     window.location.href = "formDataDiri.html";
 });
+
+document.getElementById('btnKonsultasi2').addEventListener('click', function() {
+    window.location.href = "formDataDiri.html";
+});

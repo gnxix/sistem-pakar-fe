@@ -132,7 +132,7 @@ nav {
 }
 
 .beranda h2 {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0;
 }
 
@@ -166,6 +166,10 @@ nav {
     box-shadow: 0px 3px 1px 0px #79767672;
     border-style: solid;
     margin-left: 20px;
+}
+
+#btnKonsultasi:hover {
+    background-color: #6fa064;
 }
 
 .mobile div button p {
@@ -358,6 +362,7 @@ footer h3 {
 footer p {
     font-size: 10px;
     margin: auto;
+    font-weight: 100;
 }
 
 footer ul {
@@ -392,7 +397,15 @@ footer ul li {
     }
 
     h1 {
-        font-size: 16px;
+        font-size: 15px;
+    }
+
+    .beranda h2 {
+        font-size: 15px;
+    }
+
+    .beranda p {
+        font-size: 10px;
     }
 
     button img {
@@ -417,6 +430,8 @@ footer ul li {
     .beranda {
         padding: 0 40px 0 40px;
     }
+
+
     
     .mobile div img {
         width: 140px;
@@ -424,8 +439,8 @@ footer ul li {
     
     .vector1 {
         position: absolute;
-        width: 90px;
-        top: 175px;
+        width: 95px;
+        top: 171px;
     }
     
     .vector2 {
@@ -485,13 +500,12 @@ footer ul li {
     /* Style untuk Header */
 
     h1 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     /* Style untuk Beranda */
-
     .beranda h2 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .mobile p {
@@ -558,12 +572,16 @@ footer ul li {
     footer {
         padding: 30px 40px 20px;
     }
+
+    footer p {
+        font-size: 11px;
+    }
 }
 
 @media (min-width: 600px) {
     /* Style untuk Header */
     h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     /* Style untuk Beranda */
@@ -581,7 +599,7 @@ footer ul li {
     }
 
     .beranda h2 {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .web-body {
@@ -591,7 +609,7 @@ footer ul li {
     }
 
     .web p {
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 500;
         margin: 0;
     }
@@ -608,6 +626,10 @@ footer ul li {
         box-shadow: 0px 3px 1px 0px #79767672;
         border-style: solid;
         margin-left: 20px;
+    }
+
+    #btnKonsultasi2:hover {
+        background-color: #6fa064;
     }
 
     .web-body button p {
@@ -636,7 +658,7 @@ footer ul li {
 
     /* Style untuk Tentang SIPAKAR */
     .ttgSIPAKAR {
-        padding: 40px 40px 0px;
+        padding: 40px 60px 0px;
     }
 
     .ttgSIPAKAR img.stomachache {
@@ -645,38 +667,46 @@ footer ul li {
     }
 
     .ttgSIPAKAR h3 {
-        font-size: 18px;
-    }
-
-    .ttgSIPAKAR p {
-        font-size: 14px;
-    }
-
-    /* Style untuk Informasi Penyakit */
-    .infopenyakit h3 {
-        font-size: 18px;
-    }
-    
-    .barpenyakit ul {
-        width: 470px;
         font-size: 16px;
     }
 
-    .flex1 h4, p{
+    .ttgSIPAKAR p {
+        font-size: 12px;
+    }
+
+    /* Style untuk Informasi Penyakit */
+    .infopenyakit {
+        padding: 40px 60px;
+    }
+
+    .infopenyakit h3 {
+        font-size: 16px;
+    }
+    
+    .barpenyakit ul {
+        width: 420px;
         font-size: 14px;
+    }
+
+    .flex1 {
+        gap: 20px;
+    }
+
+    .flex1 h4, p{
+        font-size: 12px;
     }
 
     .flex2 h4, p {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .flex1 img {
-        height: 135px;
+        height: 115px;
     }
 
     /* Style untuk Footer */
     footer h3 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     footer p {
@@ -685,19 +715,80 @@ footer ul li {
 }
 
 @media (min-width: 667px) {
+    /* Style untuk Header */
+    header h1 {
+        font-size: 20px;
+    }
+
     /* Style untuk Beranda */
+    .beranda {
+        padding: 0px 70px;
+    }
+
+    .beranda h2 {
+        font-size: 20px;
+    }
+
     .beranda p {
+        font-size: 12px;
+    }
+
+    #btnKonsultasi2 {
+        width: 130px;
+    }
+
+    #btnKonsultasi2 p {
         font-size: 14px;
+    }
+
+    .vector2 {
+        width: 90px;
+    }
+
+    /* Style untuk Tentang SIPAKAR */
+    .ttgSIPAKAR {
+        padding: 40px 70px 0px;
+    }
+
+    .ttgSIPAKAR p {
+        font-size: 12px;
     }
 
     /* Style untuk Informasi Penyakit */
+    .infopenyakit {
+        padding: 40px 70px;
+    }
+
     .barpenyakit ul {
-        width: 525px;
+        width: 470px;
     }
 
     /* Style untuk Footer */
+    footer {
+        display: flex;
+        flex-direction: column;
+        padding: 30px 50px 20px;
+    }
+
+    .isi-footer {
+        display: flex;
+        gap: 60px;
+    }
+
+    .footer-sipakar {
+        width: 50%;
+    }
+
+    .kontakPengembang{
+        padding: 0%;
+    }
+
+    footer h3 {
+        font-size: 16px;
+    }
+
     footer p {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
@@ -707,8 +798,8 @@ footer ul li {
         padding: 10px 50px 0px;
     }
 
-    h1 {
-        font-size: 24px;
+    header h1 {
+        font-size: 20px;
     }
 
     #burgerButton {
@@ -730,7 +821,7 @@ footer ul li {
     .burgerMenu li {
         padding: 0px;
         text-align: center;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: lighter;
         border-radius: 0px;
     }
@@ -758,11 +849,12 @@ footer ul li {
     }
 
     .beranda {
-        padding: 0px 70px;
+        padding: 0px 80px;
     }
 
     .beranda h2 {
-        font-size: 24px;
+        font-size: 22px;
+        width: 500px;
     }
 
     .web-body {
@@ -772,11 +864,12 @@ footer ul li {
     }
 
     .web p {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .web button {
-        width: 120px;
+        width: 140px;
+        min-height: 35px;
     }
 
     .web-body button p {
@@ -793,13 +886,13 @@ footer ul li {
     }
 
     .vector2 {
-        width: 110px;
+        width: 100px;
         top: 50px;
     }
 
     /* Style untuk Tentang SIPAKAR */
     .ttgSIPAKAR {
-        padding: 50px 50px 0px;
+        padding: 50px 80px 0px;
     }
 
     .ttgSIPAKAR div {
@@ -812,20 +905,20 @@ footer ul li {
     }
 
     .ttgSIPAKAR h3 {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .ttgSIPAKAR p {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     /* Style untuk Informasi Penyakit */
     .infopenyakit {
-        padding: 40px 50px 50px;
+        padding: 50px 80px;
     }
 
     .infopenyakit h3 {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .barpenyakit {
@@ -833,8 +926,8 @@ footer ul li {
     }
     
     .barpenyakit ul {
-        width: 565px;
-        font-size: 18px;
+        width: 500px;
+        font-size: 16px;
     }
 
     .flex1 {
@@ -842,24 +935,39 @@ footer ul li {
     }
 
     .flex1 h4, p{
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .flex2 h4, p {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .flex1 img {
-        height: 150px;
+        height: 130px;
     }
 
     /* Style untuk Footer */
     footer {
+        display: flex;
+        flex-direction: column;
         padding: 30px 50px 20px;
     }
 
+    .isi-footer {
+        display: flex;
+        gap: 90px;
+    }
+
+    .footer-sipakar {
+        width: 50%;
+    }
+
+    .kontakPengembang{
+        padding: 0%;
+    }
+
     footer h3 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     footer p {
@@ -877,12 +985,12 @@ footer ul li {
         padding: 20px 80px 0px;
     }
 
-    h1 {
-        font-size: 30px;
+    header h1 {
+        font-size: 24px;
     }
 
     .burgerMenu li {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .burgerMenu a {
@@ -896,7 +1004,8 @@ footer ul li {
     }
 
     .beranda h2 {
-        font-size: 30px;
+        font-size: 26px;
+        width: auto;
     }
 
     .web-body {
@@ -904,16 +1013,16 @@ footer ul li {
     }
 
     .web p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
-    .web button {
-        width: 150px;
-        height: 35px;
+    #btnKonsultasi2 {
+        width: 170px;
+        height: 40px;
     }
 
-    .web-body button p {
-        font-size: 18px;
+    #btnKonsultasi2 p {
+        font-size: 16px;
     }
 
     .web div img {
@@ -921,18 +1030,18 @@ footer ul li {
     }
 
     .vector1 {
-        width: 190px;
-        top: 155px;
+        width: 150px;
+        top: 190px;
     }
 
     .vector2 {
-        width: 155px;
+        width: 120px;
         top: 65px;
     }
 
     /* Style untuk Tentang SIPAKAR */
     .ttgSIPAKAR {
-        padding: 80px 80px 0px;
+        padding: 80px 120px 0px;
     }
 
     .ttgSIPAKAR div {
@@ -941,24 +1050,24 @@ footer ul li {
 
     .ttgSIPAKAR img.stomachache {
         top: 30%;
-        width: 30%;
+        width: 25%;
     }
 
     .ttgSIPAKAR h3 {
-        font-size: 28px;
+        font-size: 22px;
     }
 
     .ttgSIPAKAR p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     /* Style untuk Informasi Penyakit */
     .infopenyakit {
-        padding: 40px 80px 80px;
+        padding: 50px 120px 80px;
     }
 
     .infopenyakit h3 {
-        font-size: 28px;
+        font-size: 22px;
     }
 
     .barpenyakit {
@@ -966,20 +1075,24 @@ footer ul li {
     }
     
     .barpenyakit ul {
-        width: 735px;
-        font-size: 22px;
+        width: 660px;
+        font-size: 18px;
     }
 
     .flex1 {
         gap: 30px;
     }
 
+    .flex2 {
+        margin: 40px 0px;
+    }
+
     .flex1 h4, p{
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .flex2 h4, p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .flex1 img {
@@ -992,12 +1105,16 @@ footer ul li {
         padding: 30px 80px 20px;
     }
 
+    .isi-footer {
+        gap: 140px;
+    }
+
     footer h3 {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     footer p {
-        font-size: 18px;
+        font-size: 16px;
     }
 } 
 
@@ -1011,44 +1128,44 @@ footer ul li {
         padding: 30px 100px 0px;
     }
 
-    h1 {
-        font-size: 34px;
+    header h1 {
+        font-size: 28px;
     }
 
     .burgerMenu li {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     /* Style untuk Beranda */
     .beranda {
         padding: 0px 180px;
-        gap: 30px;
+        gap: 50px;
     }
 
     .beranda h2 {
-        font-size: 38px;
+        font-size: 32px;
     }
 
     .web-body {
-        gap: 30px;
+        gap: 50px;
     }
 
     .web p {
         font-size: 22px;
     }
 
-    .web button {
-        width: 250px;
-        height: 60px;
+    #btnKonsultasi2 {
+        width: 200px;
+        height: 50px;
         border-radius: 20px;
     }
 
-    .web-body button p {
+    #btnKonsultasi2 p {
         font-size: 22px;
     }
 
     .web div img {
-        width: 350px;
+        width: 320px;
     }
 
     .vector1 {
@@ -1057,7 +1174,7 @@ footer ul li {
     }
 
     .vector2 {
-        width: 170px;
+        width: 150px;
         top: 75px;
     }
 
@@ -1076,7 +1193,7 @@ footer ul li {
         left: 0%;
         transform: none;
         z-index: 1;
-        width: 40%;
+        width: 35%;
         height: auto;
     }
 
@@ -1096,7 +1213,7 @@ footer ul li {
     }
     
     .ttgSIPAKAR h3 {
-        font-size: 26px;
+        font-size: 24px;
         font-weight: 900;
     }
     
@@ -1106,11 +1223,11 @@ footer ul li {
 
     /* Style untuk Informasi Penyakit */
     .infopenyakit {
-        padding: 80px 100px ;
+        padding: 100px;
     }
 
     .infopenyakit h3 {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .barpenyakit {
@@ -1125,8 +1242,8 @@ footer ul li {
     
     .barpenyakit ul {
         width: 1028px;
-        font-size: 22px;
-        gap: 30px;
+        font-size: 20px;
+        gap: 20px;
     }
 
     .flex1 {
@@ -1135,12 +1252,12 @@ footer ul li {
     }
 
     .flex1 h4 {
-        font-size: 22px;
+        font-size: 18px;
         padding-bottom: 5px;
     }
 
     .flex1 p{
-        font-size: 22px;
+        font-size: 18px;
         padding-bottom: 20px;
         width: 300px;
     }
@@ -1152,22 +1269,30 @@ footer ul li {
     }
 
     .flex2 h4, p {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .flex1 img {
-        width: 230px;
+        width: 180px;
         height: fit-content;
         border-radius: 25px;
     }
 
     /* Style untuk Footer */
     footer {
-        padding: 30px 100px 0px 100px;
+        padding: 30px 100px 30px 100px;
+    }
+
+    .isi-footer {
+        gap: 250px;
+    }
+
+    footer h3 {
+        font-size: 24px;
     }
 
     footer p {
-        font-size: 22px;
+        font-size: 18px;
     }
 }
 
@@ -1205,7 +1330,11 @@ footer ul li {
     }
 
     /* Style untuk Footer */
+    footer h3 {
+        font-size: 32px;
+    }
+
     footer p {
-        font-size: 22px;
+        font-size: 24px;
     }
 } 

@@ -1,6 +1,10 @@
 document.getElementById('btnKonsultasi').addEventListener('click', function() {
     window.location.href = "konsultasi.html";
 });
+
+document.getElementById('btnKonsultasi2').addEventListener('click', function() {
+    window.location.href = "konsultasi.html";
+});
   
 document.getElementById("burgerButton").addEventListener("click", function() {
     var menu = document.getElementById("burgerMenu");
