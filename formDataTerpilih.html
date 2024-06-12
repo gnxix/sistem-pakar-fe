@@ -6,8 +6,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
         </style>
-    <link rel="stylesheet" href="./styles/konsultasi.css">
-    <title>SIPAKAR</title>
+    <link rel="stylesheet" href="./styles/formDataTerpilih.css">
+    <title>Form Data Gejala</title>
 </head>
 <body>
     <header>
@@ -28,7 +28,7 @@
             </div>
             <li class="menu-item" id="btnKeRiwayatKonsultasi">Riwayat Konsultasi</li>
         </ul>
-        <h1>Konsultasi</h1>
+        <h1>Form Data Gejala</h1>
     </header>
     <aside>
         <ul id="sideMenu" class="sideMenu">
@@ -46,46 +46,32 @@
             <li class="menu-item" id="btnKeRiwayatKonsultasi2">Riwayat Konsultasi</li>
         </ul>
     </aside>
+
     <main>
-        <div class="main-body">
-            <h2>
-                Selamat Datang!
-            </h2>
-            <div class="main">
-                <div>
-                    <img src="./assets/cuate.svg" alt="">
-                </div>
-                <p>
-                    SIPAKAR saat ini hadir untuk membantu anda dalam melakukan diagnosis awal penyakit lambung dan memberikan saran pengobatan yang anda butuhkan.
-                </p>
-                <p>
-                    Yuk, mulai konsultasinya sekarang! 
-                </p>
-                <div id="btnKonsultasi" class="button-container">
-                    <button class="submit" type="submit">MULAI KONSULTASI</button>
-                </div>
-            </div>
-            <div class="main2">
-                <p>
-                    SIPAKAR saat ini hadir untuk membantu anda dalam melakukan diagnosis awal penyakit lambung dan memberikan saran pengobatan yang anda butuhkan.
-                </p>
-                <div class="isi-main2">
-                    <div class="isi-main3"> 
-                        <p>
-                            Yuk, mulai konsultasinya sekarang! 
-                        </p>
-                        <div id="btnKonsultasi2" class="button-container">
-                            <button class="submit" type="submit">MULAI KONSULTASI</button>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="./assets/cuate.svg" alt="">
-                    </div>
-                </div>
+        <p> Silahkan tentukan skala keyakinan dari setiap gejala yang dipilih pada tabel di bawah ini:</p>
+        <div>
+            <table id="tabelDataTerpilih">
+                <thead>
+                    <tr>
+                        <th>Kode Gejala</th>
+                        <th class="left-align">Nama Gejala</th>
+                        <th>Pilih Jawaban</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="pagination">
+                <button id="prev" onclick="prevPage()">
+                    <img src="./assets/iconoir_page-left.svg" alt="">
+                </button>
+                <button id="next" onclick="nextPage()">
+                    <img src="./assets/iconoir_page-right.svg" alt="">
+                </button>
+                <button id="btnKirim" type="submit">KIRIM</button>
             </div>
         </div>
     </main>
-
+    
     <div id="overlay"></div>
 
     <footer>
@@ -130,6 +116,6 @@
         </div>
      </footer>
 
-    <script src="./functions/konsultasi.js"></script>
+     <script src="./functions/formDataTerpilih.js"></script>
 </body>
 </html>
