@@ -10,67 +10,78 @@
     <title>Form Data Gejala</title>
 </head>
 <body>
-    <header>
-        <button id="burgerButton">
-            <img src="./assets/mdi-light_menu.svg" alt="Menu">
-        </button>
-        <ul id="burgerMenu" class="burgerMenu">
-            <div class="namaApk">
-                <li>SIPAKAR</li>
-            </div>
-            <hr class="custom-hr">
-            <li class="menu-item" id="btnKeBeranda">Beranda</li>
-            <li class="menu-item" id="btnKeKonsultasi">Konsultasi</li>   
-            <div class="subKonsultasi">
-                <li class="menu-item" id="btnKeFormDataDiri">Form Data Diri</li>
-                <li class="menu-item" id="btnKeFormDataGejala">Form Data Gejala</li>
-                <li class="menu-item" id="btnKePerhitunganManual">Perhitungan Manual</li>
-            </div>
-            <li class="menu-item" id="btnKeRiwayatKonsultasi">Riwayat Konsultasi</li>
-        </ul>
-        <h1>Form Data Gejala</h1>
-    </header>
-    <aside>
-        <ul id="sideMenu" class="sideMenu">
-            <div class="namaApk">
-                <li>SIPAKAR</li>
-            </div>
-            <hr class="custom-hr">
-            <li class="menu-item" id="btnKeBeranda2">Beranda</li>
-            <li class="menu-item" id="btnKeKonsultasi2">Konsultasi</li>   
-            <div class="subKonsultasi">
-                <li class="menu-item" id="btnKeFormDataDiri2">Form Data Diri</li>
-                <li class="menu-item" id="btnKeFormDataGejala2">Form Data Gejala</li>
-                <li class="menu-item" id="btnKePerhitunganManual2">Perhitungan Manual</li>
-            </div>
-            <li class="menu-item" id="btnKeRiwayatKonsultasi2">Riwayat Konsultasi</li>
-        </ul>
-    </aside>
+    <div class="container">
+        <aside>
+            <ul id="sideMenu" class="sideMenu">
+                <div class="namaApk">
+                    <li>SIPAKAR</li>
+                </div>
+                <hr class="custom-hr">
+                <li class="menu-item" id="btnKeBeranda2">Beranda</li>
+                <li class="menu-item" id="btnKeKonsultasi2">Konsultasi</li>   
+                <div class="subKonsultasi">
+                    <li class="menu-item" id="btnKeFormDataDiri2">Form Data Diri</li>
+                    <li class="menu-item" id="btnKeFormDataGejala2">Form Data Gejala</li>
+                    <li class="menu-item" id="btnKePerhitunganManual2">Perhitungan Manual</li>
+                </div>
+                <li class="menu-item" id="btnKeRiwayatKonsultasi2">Riwayat Konsultasi</li>
+            </ul>
+        </aside>
+        
+        <header>
+            <button id="burgerButton">
+                <img src="./assets/mdi-light_menu.svg" alt="Menu">
+            </button>
+            <ul id="burgerMenu" class="burgerMenu">
+                <div class="namaApk">
+                    <li>SIPAKAR</li>
+                </div>
+                <hr class="custom-hr">
+                <li class="menu-item" id="btnKeBeranda">Beranda</li>
+                <li class="menu-item" id="btnKeKonsultasi">Konsultasi</li>   
+                <div class="subKonsultasi">
+                    <li class="menu-item" id="btnKeFormDataDiri">Form Data Diri</li>
+                    <li class="menu-item" id="btnKeFormDataGejala">Form Data Gejala</li>
+                    <li class="menu-item" id="btnKePerhitunganManual">Perhitungan Manual</li>
+                </div>
+                <li class="menu-item" id="btnKeRiwayatKonsultasi">Riwayat Konsultasi</li>
+            </ul>
+            <h1>Form Data Gejala</h1>
+        </header>
 
-    <main>
-        <p> Silahkan tentukan skala keyakinan dari setiap gejala yang dipilih pada tabel di bawah ini:</p>
-        <div>
-            <table id="tabelDataTerpilih">
-                <thead>
-                    <tr>
-                        <th>Kode Gejala</th>
-                        <th class="left-align">Nama Gejala</th>
-                        <th>Pilih Jawaban</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-            <div class="pagination">
-                <button id="prev" onclick="prevPage()">
-                    <img src="./assets/iconoir_page-left.svg" alt="">
-                </button>
-                <button id="next" onclick="nextPage()">
-                    <img src="./assets/iconoir_page-right.svg" alt="">
-                </button>
-                <button id="btnKirim" type="submit">KIRIM</button>
+        <main>
+            <p> Silahkan tentukan skala keyakinan dari setiap gejala yang dipilih pada tabel di bawah ini:</p>
+            <div>
+                <table id="tabelDataTerpilih">
+                    <thead>
+                        <tr>
+                            <th>Kode Gejala</th>
+                            <th class="left-align">Nama Gejala</th>
+                            <th>Pilih Jawaban</th>
+                            <th>Bobot</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="pagination">
+                    <button id="btnKirim" type="submit">KIRIM</button>
+                </div>
             </div>
-        </div>
-    </main>
+
+            <div id="perhitungan" class="perhitungan" style="display: none;">
+                <h3>
+                    Perhitungan Metode Certainty Factor
+                </h3>
+                <p>
+                    Berikut ini merupakan tahap perhitungan metode Certainty Factor yang digunakan untuk mencari hasil diagnosis awal penyakit lambung berdasarkan gejala yang dirasakan oleh pengguna. Hasil perhitungan metode dapat dilihat pada tabel di bawah ini.
+                </p>
+                <div class="pagination2">
+                    <button id="btnLihatHasil" type="submit">LIHAT HASIL DIAGNOSIS AWAL</button>
+                </div>
+                <div id="tablesContainer"></div>
+            </div>
+        </main>
+    </div>
     
     <div id="overlay"></div>
 

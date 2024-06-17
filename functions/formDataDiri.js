@@ -106,3 +106,36 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+// Pengiriman Data ke BE
+document.getElementById('personal-data-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = {
+        alamat_surel: document.getElementById('email').value,
+        nama_lengkap: document.getElementById('fullname').value,
+        usia: document.getElementById('age').value,
+        jenis_kelamin: document.getElementById('jenis_kelamin').value
+    };
+
+    fetch('http://localhost:5502/api/data_diri', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert('Error: ' + data.error);
+        } else {
+            alert('Success: ' + data.message);
+            document.getElementById('personal-data-form').reset();
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+

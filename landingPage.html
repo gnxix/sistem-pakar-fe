@@ -86,47 +86,53 @@
             <div class="barpenyakit">
                 <ul class="scroll-container">
                     <a href=""></a>
-                    <li>Dispepsia</li>
-                    <li>Gastritis</li>
-                    <li>GERD</li>
-                    <li>Gastroparesis</li>
-                    <li>Gastroenteritis</li>
-                    <li>Polip Lambung</li>
-                    <li>Tukak Lambung</li>
-                    <li>Kanker Lambung</li>
+                    <li onclick="showInfo('dispepsia')">Dispepsia</li>
+                    <li onclick="showInfo('gastritis')">Gastritis</li>
+                    <li onclick="showInfo('gerd')">GERD</li>
+                    <li onclick="showInfo('gastroparesis')">Gastroparesis</li>
+                    <li onclick="showInfo('gastroenteritis')">Gastroenteritis</li>
+                    <li onclick="showInfo('polipLambung')">Polip Lambung</li>
+                    <li onclick="showInfo('tukakLambung')">Tukak Lambung</li>
+                    <li onclick="showInfo('kankerLambung')">Kanker Lambung</li>
                 </ul>
                 <hr class="custom-hr">
                 <div>
-                    <div class="flex1">
-                        <img src="./assets/Dispepsia.jpg" alt="">
-                        <div>
+                    <div class="grid">
+                        <div class="item1">
+                            <img id="disease-image" src="./assets/Dispepsia.jpg" alt="">
+                        </div>
+                        <div class="item2">
                             <h4>
-                                Nama Penyakit
+                                Deskripsi Penyakit
                             </h4>
-                            <p>
-                                Dispepsia
+                            <p id="disease-desc">
+                                Dispepsia adalah istilah medis yang merujuk pada gangguan pencernaan atau rasa tidak nyaman di bagian atas perut.
                             </p>
+                        </div>
+                        <div class="item3">
                             <h4>
                                 Penyebab
                             </h4>
-                            <p>
-                                Helicobacter Pylori
+                            <p id="disease-cause">
+                                Konsumsi makanan berlemak, berminyak, asam dan pedas terlalu banyak. Konsumsi minuman beralkohol, bersoda, dan berkafein tinggi. Merokok, merasa cemas/stres, dan konsumsi jenis obat NSAID.
                             </p>
+                        </div>
+                        <div class="item4">
                             <h4>
                                 Gejala Penyakit
                             </h4>
-                            <p>
-                                Mual, muntah, nyeri pada ulu hati, kembung, anemia.
+                            <p id="disease-symptoms">
+                                Mual, muntah, perut kembung, cepat merasa kenyang, nyeri pada ulu hati, tidak nafsu makan, penurunan berat badan tanpa alasan yang jelas, anemia.
                             </p>
                         </div>
-                    </div>
-                    <div class="flex2">
-                        <h4>
-                            Cara Mencegah Penyakit
-                        </h4>
-                        <p>
-                            Menjaga pola makan, hindari makanan pedas dan asam, hindari minuman bersoda dan beralkohol. Pastikan untuk memiliki nutrisi harian yang tercukupi terutama Protein, Kalori, dan Lemak.
-                        </p>
+                        <div class="item5">
+                            <h4>
+                                Cara Mencegah Penyakit
+                            </h4>
+                            <p id="disease-prevention">
+                                Menghindari makanan berlemak, berminyak, asam dan pedas. Berhenti/tidak mengkonsumsi minuman beralkohol. Mengurangi minuman bersoda, berkafein, dan cokelat. Merokok. Mengontrol cemas/stres yang berlebihan. Berkonsultasi dengan dokter dalam pemilihan jenis obat antibiotik dan penghilang rasa nyeri.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -266,6 +266,13 @@ footer ul li {
 }
 
 @media (min-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr;
+        height: 100%;
+    }
+
     /* Style untuk Header */
     #burgerButton {
         display: none;
@@ -276,8 +283,7 @@ footer ul li {
     }
 
     header {
-        left: 147.58px;
-        padding: 10px 30px 0px;
+        left: 147px;
     }
 
     header h1 {
@@ -285,17 +291,14 @@ footer ul li {
     }
 
     .sideMenu {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
         color: white;
         list-style: none;
         padding: 0;
         margin: 0;
         background-color: #73B385;
         backdrop-filter: blur(2px);
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: auto;
-        height: 418px;
         box-shadow: 0px 0px 0px 0px #79767672;
     }
     
@@ -315,7 +318,7 @@ footer ul li {
 
     /* Style untuk Main */
     main {
-        margin: 80px 40px 30px 180px;
+        margin: 80px 40px 0px;
     }
 
     .main {
@@ -364,11 +367,8 @@ footer ul li {
     header {
         left: 165.10px;
     }
-
-    .sideMenu {
-        height: 428px;
-    }
     
+    /* Style untuk Side Menu */
     .sideMenu li {
         padding: 10px 10px 10px 30px;
         font-size: 12px;
@@ -384,10 +384,6 @@ footer ul li {
     }
 
     /* Style untuk Main */
-    main {
-        margin: 80px 40px 30px 210px;
-    }
-
     .isi-main2 > div > img {
         width: 200px;
     }
@@ -432,21 +428,6 @@ footer ul li {
     header h1 {
         font-size: 20px;
     }
-
-    .sideMenu {
-        color: white;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        background-color: #73B385;
-        backdrop-filter: blur(2px);
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: auto;
-        height: 458px;
-        box-shadow: 0px 0px 0px 0px #79767672;
-    }
     
     .sideMenu li {
         padding: 10px 10px 10px 30px;
@@ -467,10 +448,6 @@ footer ul li {
     }
 
     /* Style untuk Main */
-    main {
-        margin: 80px 80px 30px 240px;
-    }
-
     .main {
         display: none;
     }
@@ -493,7 +470,7 @@ footer ul li {
         font-size: 20px;
     }
     
-    p {
+    .main-body p {
         font-size: 13px;
     }
     
@@ -534,17 +511,14 @@ footer ul li {
     /* Style untuk Header */
     header {
         left: 200.14px;
-        padding: 15px 80px 5px 40px;
+        padding: 15px 50px 5px;
     }
 
     header h1 {
-        font-size: 20px;
-    }
-
-    .sideMenu {
-        height: 550px;
+        font-size: 22px;
     }
     
+    /* Style untuk Side Menu */
     .sideMenu li {
         font-size: 16px;
     }
@@ -562,7 +536,7 @@ footer ul li {
 
     /* Style untuk Main */
     main {
-        margin: 100px 80px 30px 260px;
+        margin: 100px 50px 0px;
     }
 
     .isi-main2 > div > img {
@@ -614,22 +588,19 @@ footer ul li {
 @media (min-width: 1347px) {
     /* Style untuk Header */
     header {
-        left: 200.14px;
+        left: 217.65px;
         padding: 15px 80px 5px 40px;
     }
 
     header h1 {
         font-size: 22px;
     }
-
-    .sideMenu {
-        height: 570px;
-    }
     
+    /* Style untuk Side Menu */
     .sideMenu li {
-        padding: 10px 10px 10px 30px;
+        padding: 20px 10px 10px 30px;
         text-align: left;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: lighter;
     }
     
@@ -641,29 +612,29 @@ footer ul li {
     }
 
     .custom-hr {
-        width: 140px;
+        width: 160px;
     }
 
     /* Style untuk Main */
     main {
-        margin: 120px 150px 30px 350px;
+        margin: 120px 100px 30px;
     }
 
     .isi-main2 > div > img {
-        width: 300px;
+        width: 400px;
     }
 
     h2 {
         font-size: 24px;
     }
     
-    p {
+    .main-body p {
         font-size: 18px;
         line-height: 200%;
     }
     
     .submit {
-        font-size: 16px;
+        font-size: 18px;
         width: 220px;
         height: 50px;
     }
@@ -695,8 +666,4 @@ footer ul li {
     footer p {
         font-size: 16px;
     }
-}
-
-@media (min-width: 1440px) {
-
 }

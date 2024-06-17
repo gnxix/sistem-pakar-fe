@@ -117,6 +117,7 @@ const data = [
 const rowsPerPage = 8;
 let currentPage = 1;
 let checkedStatus = JSON.parse(localStorage.getItem('checkedStatus')) || {};
+let isSubmitted = JSON.parse(localStorage.getItem('isSubmitted')) || false;
 
 function displayTable(data, page) {
     const tableBody = document.querySelector('#tabelDataGejala tbody');
@@ -165,12 +166,53 @@ function prevPage() {
     }
 }
 
-// Initial display
-displayTable(data, currentPage);
-
-
 document.getElementById('btnKirim').addEventListener('click', function(event) {
     event.preventDefault();
+
+    if (Object.keys(checkedStatus).length === 0) {
+        alert('Harap pilih gejala sebelum mengirim.');
+        return;
+    }
+
+    localStorage.setItem('submittedData', JSON.stringify(checkedStatus));
+    localStorage.setItem('isSubmitted', true);
+    isSubmitted = true;
     alert('Formulir Terkirim!');
+
+    // Redirect to another page
     window.location.href = "formDataTerpilih.html";
 });
+
+// Clear checkedStatus and checkboxes on page refresh
+window.addEventListener('load', function() {
+    if (performance.getEntriesByType("navigation")[0].type === "reload") {
+        checkedStatus = {};
+        isSubmitted = false;
+        localStorage.removeItem('checkedStatus');
+        localStorage.removeItem('isSubmitted');
+    }
+    displayTable(data, currentPage);
+});
+
+window.addEventListener('beforeunload', function(event) {
+    if (!isSubmitted) {
+        const confirmationMessage = 'Anda belum mengirimkan data gejala. Apakah Anda yakin ingin meninggalkan halaman ini?';
+        event.preventDefault();
+        event.returnValue = confirmationMessage;
+        return confirmationMessage;
+    }
+});
+
+// Cek jika pengguna menekan tombol back atau forward di browser
+window.addEventListener('popstate', function(event) {
+    if (!isSubmitted && performance.getEntriesByType("navigation")[0].type !== "reload") {
+        alert('Harap pilih gejala dan kirimkan data terlebih dahulu.');
+        window.history.pushState(null, null, window.location.pathname);
+    }
+});
+
+// Menambahkan state awal
+window.history.pushState(null, null, window.location.pathname);
+
+// Initial display
+displayTable(data, currentPage);
