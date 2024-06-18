@@ -152,6 +152,7 @@ document.getElementById('btnKirim').addEventListener('click', function() {
     const dropdowns = document.querySelectorAll('.dropdown');
     let allSelected = true;
     let cf_user = [];
+    let selectedGejala = [];
 
     dropdowns.forEach(dropdown => {
         const pilihan_jawaban = dropdown.value;
@@ -167,6 +168,7 @@ document.getElementById('btnKirim').addEventListener('click', function() {
                     nama_gejala: savedStatus[kode_gejala].nama,
                     bobot_cf_user: bobot_cf_user
                 });
+                selectedGejala.push(kode_gejala);
             } else {
                 console.error(`Status tersimpan untuk ${kode_gejala} tidak didefinisikan atau tidak ada.`);
                 allSelected = false;
@@ -185,6 +187,7 @@ document.getElementById('btnKirim').addEventListener('click', function() {
 
             // Menyimpan cf_user di variabel global atau local scope untuk digunakan dalam createPerhitunganTable
             window.cf_user = cf_user;
+            createPerhitunganTable(selectedGejala);
         }
     }
 });
@@ -315,10 +318,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    const tablesContainer = document.getElementById('tablesContainer');
+    const selectedGejala = [];
 
-    // Simulated user-selected symptoms (this should come from user input in the real app)
-    const selectedGejala = ['G01', 'G05', 'G07', 'G08'];
+    const tablesContainer = document.getElementById('tablesContainer');
 
     // Function to calculate CF(user) x CF(pakar)
     function calculateCFUserPakar(cfUser, cfPakar) {
@@ -361,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function() {
           row.innerHTML = `
             <td>${gejala}</td>
             <td class="left-align">Nama Gejala Placeholder</td>
-            <td><input type="number" class="cf-user" data-kode="${gejala}" value="0.8"></td>
+            <td><input class="cf-user" data-kode="${gejala}" value="${bobot_cf_user}"></td>
             <td>${cfPakar}</td>
             <td class="cf-result"></td>
           `;
