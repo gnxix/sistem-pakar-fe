@@ -139,6 +139,7 @@ main > p {
 
 table {
     border-collapse: collapse;
+    width: 100%;
 }
 
 td.left-align {
@@ -194,7 +195,7 @@ th {
     border: 2px solid #73B385;
     border-radius: 20px;
     color: white;
-    padding: 6px;
+    padding: 0px 6px;
     font-size: 8px;
     width: 60px;
     cursor: pointer;

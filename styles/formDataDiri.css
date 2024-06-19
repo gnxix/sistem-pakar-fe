@@ -329,6 +329,22 @@ footer ul li {
         color: #cccccc;
     }
 
+    label {
+        font-size: 10px;
+        padding-right: 10px;
+        align-self: center;
+        text-wrap: nowrap;
+    }
+    
+    #jenis_kelamin {
+        font-family: "Nunito", "sans-serif";
+        font-size: 10px;
+        border-radius: 20px;
+        padding: 5px;
+        width: 100%;
+        border-color: #73B385;
+    }
+
     .button-container {
         display: flex;
         justify-content: flex-end;
@@ -425,6 +441,22 @@ footer ul li {
 
     input::placeholder {
         color: #cccccc;
+    }
+
+    label {
+        font-size: 12px;
+        padding-right: 10px;
+        align-self: center;
+        text-wrap: nowrap;
+    }
+    
+    #jenis_kelamin {
+        font-family: "Nunito", "sans-serif";
+        font-size: 12px;
+        border-radius: 20px;
+        padding: 5px;
+        width: 100%;
+        border-color: #73B385;
     }
 
     .button-container {
@@ -672,6 +704,22 @@ footer ul li {
 
     input {
         font-size: 16px;
+    }
+
+    label {
+        font-size: 16px;
+        padding-right: 10px;
+        align-self: center;
+        text-wrap: nowrap;
+    }
+    
+    #jenis_kelamin {
+        font-family: "Nunito", "sans-serif";
+        font-size: 16px;
+        border-radius: 20px;
+        padding: 5px;
+        width: 100%;
+        border-color: #73B385;
     }
 
     .submit {

@@ -6,8 +6,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
     </style>
-    <link rel="stylesheet" href="./styles/formDataTerpilih.css">
-    <title>Form Data Gejala</title>
+    <title>Data Gejala</title>
+    <link rel="stylesheet" href="./styles/formDataGejala.css">
 </head>
 <body>
     <div class="container">
@@ -50,83 +50,75 @@
         </header>
 
         <main>
-            <p> Silahkan tentukan skala keyakinan dari setiap gejala yang dipilih pada tabel di bawah ini:</p>
+            <p> Silahkan centang [✓] gejala yang anda rasakan pada tabel di bawah ini:</p>
             <div>
-                <table id="tabelDataTerpilih">
+                <table id="tabelDataGejala">
                     <thead>
                         <tr>
                             <th>Kode Gejala</th>
                             <th class="left-align">Nama Gejala</th>
-                            <th>Pilih Jawaban</th>
-                            <th>Bobot</th>
+                            <th>Pilih Gejala</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
                 <div class="pagination">
-                    <button id="btnKirim" type="submit">KIRIM</button>
+                    <button id="prev" onclick="prevPage()">
+                        <img src="./assets/iconoir_page-left.svg" alt="">
+                    </button>
+                    <button id="next" onclick="nextPage()">
+                        <img src="./assets/iconoir_page-right.svg" alt="">
+                    </button>
+                    <button id="btnKirim" type="submit">SIMPAN</button>
                 </div>
-            </div>
-
-            <div id="perhitungan" class="perhitungan" style="display: none;">
-                <h3>
-                    Perhitungan Metode Certainty Factor
-                </h3>
-                <p>
-                    Berikut ini merupakan tahap perhitungan metode Certainty Factor yang digunakan untuk mencari hasil diagnosis awal penyakit lambung berdasarkan gejala yang dirasakan oleh pengguna. Hasil perhitungan metode dapat dilihat pada tabel di bawah ini.
-                </p>
-                <div class="pagination2">
-                    <button id="btnLihatHasil" type="submit">LIHAT HASIL DIAGNOSIS AWAL</button>
-                </div>
-                <div id="tablesContainer"></div>
             </div>
         </main>
     </div>
     
     <div id="overlay"></div>
-
+    
     <footer>
         <div>
-         <div class="isi-footer">
+            <div class="isi-footer">
             <div class="footer-sipakar">
-             <h3>SIPAKAR</h3>
-             <p>
-                 SIPAKAR adalah aplikasi sistem pakar untuk diagnosa awal penyakit lambung. Aplikasi ini menggunakan metode forward chaining untuk memulai dari gejala yang dilaporkan dan menerapkan aturan-aturan medis untuk mencapai diagnosa. Dengan adanya SIPAKAR dapat membantu pengguna memahami kondisi lambung mereka secara cepat dan akurat.
-             </p>
+                <h3>SIPAKAR</h3>
+                <p>
+                    SIPAKAR adalah aplikasi sistem pakar untuk diagnosa awal penyakit lambung. Aplikasi ini menggunakan metode forward chaining untuk memulai dari gejala yang dilaporkan dan menerapkan aturan-aturan medis untuk mencapai diagnosa. Dengan adanya SIPAKAR dapat membantu pengguna memahami kondisi lambung mereka secara cepat dan akurat.
+                </p>
             </div>
-             <div class="kontakPengembang">
-                 <h3>
-                     Kontak Pengembang
-                 </h3>
-                 <p>
-                     Gabrielle Natasha Arla Frederica
-                 </p>
-                 <ul>
-                     <li>
-                         <img src="./assets/icon-mail.svg" alt="">
-                         <p>
-                             arlarumbayan@gmail.com
-                         </p>
-                     </li>
-                 </ul>
-                 <ul>
-                     <li>
-                         <img src="./assets/icon-instagram.svg" alt="">
-                         <p>
-                             g_fxix
-                         </p>
-                     </li>
-                 </ul>
-             </div>
-         </div>
+                <div class="kontakPengembang">
+                    <h3>
+                        Kontak Pengembang
+                    </h3>
+                    <p>
+                        Gabrielle Natasha Arla Frederica
+                    </p>
+                    <ul>
+                        <li>
+                            <img src="./assets/icon-mail.svg" alt="">
+                            <p>
+                                arlarumbayan@gmail.com
+                            </p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <img src="./assets/icon-instagram.svg" alt="">
+                            <p>
+                                g_fxix
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="copyright">
-         <p>
-             Copyright ©️ 2024 • SIPAKAR 
-         </p>
+            <p>
+                Copyright ©️ 2024 • SIPAKAR 
+            </p>
         </div>
     </footer>
 
-     <script src="./functions/formDataTerpilih.js"></script>
+    <script src="./functions/contoh.js"></script>
 </body>
 </html>

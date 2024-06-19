@@ -7,7 +7,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
     </style>
     <link rel="stylesheet" href="./styles/formDataTerpilih.css">
-    <title>Form Data Gejala</title>
+    <title>Form Data Gejala </title>
 </head>
 <body>
     <div class="container">
@@ -50,28 +50,21 @@
         </header>
 
         <main>
-            <p> Silahkan tentukan skala keyakinan dari setiap gejala yang dipilih pada tabel di bawah ini:</p>
-            <div>
-                <table id="tabelDataTerpilih">
-                    <thead>
-                        <tr>
-                            <th>Kode Gejala</th>
-                            <th class="left-align">Nama Gejala</th>
-                            <th>Pilih Jawaban</th>
-                            <th>Bobot</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-                <div class="pagination">
-                    <button id="btnKirim" type="submit">KIRIM</button>
-                </div>
-            </div>
-
-            <div id="perhitungan" class="perhitungan" style="display: none;">
-                <h3>
-                    Perhitungan Metode Certainty Factor
-                </h3>
+            <h2>Gejala Terpilih</h2>
+            <table id="selectedGejalaTable">
+                <thead>
+                    <tr>
+                        <th>Kode Gejala</th>
+                        <th>Nama Gejala</th>
+                        <th>Pilihan Jawaban</th>
+                        <th>Bobot</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button id="submitJawabanBtn">Kirim Jawaban</button>
+            <div id="cfSection" class="hidden">
+                <h2>Perhitungan Metode Certainty Factor</h2>
                 <p>
                     Berikut ini merupakan tahap perhitungan metode Certainty Factor yang digunakan untuk mencari hasil diagnosis awal penyakit lambung berdasarkan gejala yang dirasakan oleh pengguna. Hasil perhitungan metode dapat dilihat pada tabel di bawah ini.
                 </p>
@@ -82,7 +75,9 @@
             </div>
         </main>
     </div>
+
     
+
     <div id="overlay"></div>
 
     <footer>
@@ -126,7 +121,6 @@
          </p>
         </div>
     </footer>
-
-     <script src="./functions/formDataTerpilih.js"></script>
+    <script src="./functions/contoh2.js"></script>
 </body>
 </html>
