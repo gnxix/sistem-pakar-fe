@@ -88,6 +88,7 @@ header h2 {
 
 .menu-item:hover {
     background-color: rgb(102, 159, 118, 1);
+    font-weight: bold;
 }
 
 .burgerMenu li a {
@@ -129,12 +130,18 @@ main {
     margin: 80px 30px 0px;
 }
 
-main > p {
-    font-size: 8px;
+.custom-hr2 {
+    background-color: black;
+    margin: 0;
+}
+
+p {
+    font-size: 10px;
 }
 
 .container h2 {
     font-size: 12px;
+    margin-top: 15px;
 }
 
 table {
@@ -147,32 +154,110 @@ table, th, td {
     border: 1px solid rgba(0, 0, 0, 0.154);
 }
 
-th{
-    padding: 10px;
-    text-align: left;
+th {
+    padding: 5px;
+    text-align: center;
+    font-size: 10px;
 }
 
 td {
-    padding: 10px;
-    text-align: left;
-    
+    padding: 5px;
+    text-align: center;
+    font-size: 10px;
 }
 
 select {
     font-family: "Nunito", "sans-serif";
     border: none;
+    font-size: 10px;
+}
+
+.kirim{
+    text-align: right;
 }
 
 #submitJawabanBtn {
     font-family: "Nunito", "sans-serif";
     border: none;
+    border-radius: 10px;
     background-color: #72A272;
     color: #fff;
     padding: 2px 10px;
+    display: inline-block;
+    text-align: right;
+    margin-bottom: 15px;
+    font-size: 12px;
+    cursor: pointer;
 }
 
 .hidden {
     display: none;
+}
+
+.pagination2{
+    text-align: right;
+}
+
+#btnLihatHasil {
+    font-family: "Nunito", "sans-serif";
+    border: none;
+    border-radius: 10px;
+    background-color: #72A272;
+    color: #fff;
+    padding: 2px 10px;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Style untuk Pop Up */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: left;
+}
+
+.popup-content > h2, h3 {
+    font-size: 12px;
+}
+
+.popup-content > p {
+    font-size: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* Style untuk Footer */
@@ -295,11 +380,11 @@ footer ul li {
     }
 
     header {
-        left: 165.10px;
+        left: 155px;
     }
 
     header h1 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     /* Style untuk Side Menu */
@@ -316,21 +401,29 @@ footer ul li {
     }
     
     .sideMenu li {
-        padding: 10px 10px 10px 30px;
+        padding: 10px 10px 10px 20px;
         text-align: left;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: lighter;
+    }
+
+    #btnKePerhitunganManual2 {
+        font-weight: bold;
+    }
+
+    .menu-item {
+        width: 105px;
     }
     
     .namaApk li {
         font-weight: 700;
-        font-size: 18px;
+        font-size: 16px;
         text-align: center;
         padding: 25px 10px 25px 0px;
     }
 
     .custom-hr {
-        width: 110px;
+        width: 115px;
     }
 
     /* Style untuk Main */
@@ -338,8 +431,12 @@ footer ul li {
         margin: 80px 40px 0px;
     }
     
-    main > p {
+    .container h2 {
         font-size: 12px;
+    }
+
+    p {
+        font-size: 11px;
     }
     
     table, th, td {
@@ -355,26 +452,17 @@ footer ul li {
         font-size: 11px;
     }
     
-    .pagination {
-        gap: 40px;
-        margin: 20px 0px;
+    /* Style untuk Pop Up */
+    .popup-content > h2, h3 {
+        font-size: 14px;
     }
-    
-    #next {
-        padding-right: 20px;
-    }
-    
-    #prev img, #next img {
-        width: 25px;
-    }
-    
-    #btnKirim {
+
+    .popup-content > p {
         font-size: 12px;
-        width: 90px;
     }
-    
-    #btnKirim:hover {
-        background-color: #72A272;
+
+    .close {
+        font-size: 32px;
     }
 
     /* Style untuk Footer */
@@ -388,13 +476,63 @@ footer ul li {
 }
 
 @media (min-width: 667px) {
-    /* Style untuk Main */
-    #next {
-        padding-right: 55px;
+    /* Style untuk Header */
+    header {
+        left: 165px;
     }
 
-    #btnKirim {
-        width: 90px;
+    /* Style untuk Side Menu */
+    .sideMenu li {
+        padding: 10px 10px 10px 20px;
+        font-size: 12px;
+    }
+
+    .menu-item {
+        width: 115px;
+    }
+    
+    .namaApk li {
+        font-size: 18px;
+        padding: 25px 10px 25px 0px;
+    }
+
+    .custom-hr {
+        width: 130px;
+    }
+
+    /* Style untuk Main */
+    .container h2 {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+    
+    table, th, td {
+        border: 1px solid #DDD;
+    }
+    
+    th, td {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    select {
+        font-size: 12px;
+    }
+    
+    /* Style untuk Pop Up */
+    .popup-content > h2, h3 {
+        font-size: 16px;
+    }
+
+    .popup-content > p {
+        font-size: 14px;
+    }
+
+    .close {
+        font-size: 34px;
     }
 
     /* Style untuk Footer */
@@ -429,7 +567,7 @@ footer ul li {
 @media (min-width: 768px) {
     /* Style untuk Header */
     header {
-        left: 173.85px;
+        left: 185px;
     }
 
     header h1 {
@@ -438,12 +576,16 @@ footer ul li {
 
     /* Style untuk Side Menu */
     .sideMenu li {
-        padding: 10px 10px 10px 30px;
+        padding: 10px 10px 10px 20px;
         text-align: left;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: lighter;
     }
-    
+
+    .menu-item {
+        width: 135px;
+    }
+
     .namaApk li {
         font-weight: 700;
         font-size: 20px;
@@ -452,39 +594,50 @@ footer ul li {
     }
 
     .custom-hr {
-        width: 120px;
+        width: 150px;
     }
 
     /* Style untuk Main */
     main {
         margin: 80px 40px 0px;
     }
+
+    .container h2 {
+        font-size: 16px;
+    }
     
-    main > p {
+    p {
         font-size: 13px;
     }
     
     th, td {
         padding: 5px;
-        font-size: 12px;
+        font-size: 13px;
     }
 
     select {
-        font-size: 12px;
-    }
-    
-    .pagination {
-        gap: 60px;
-        margin: 20px 0px;
-    }
-    
-    #next {
-        padding-right:60px;
+        font-size: 13px;
     }
 
-    #btnKirim {
+    #submitJawabanBtn {
         font-size: 13px;
-        width: 100px;
+    }
+
+    #btnLihatHasil {
+        font-size: 13px;
+    }
+
+    /* Style untuk Pop Up */
+    .popup-content > h2, h3 {
+        font-size: 18px;
+    }
+
+    .popup-content > p {
+        font-size: 16px;
+    }
+
+    .close {
+        font-size: 36px;
     }
 
     /* Style untuk Footer */
@@ -519,68 +672,79 @@ footer ul li {
 @media (min-width: 1024px) {
     /* Style untuk Header */
     header {
-        left: 200.14px;
+        left: 190px;
         padding: 15px 50px 5px;
     }
 
     header h1 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     /* Style untuk Side Menu */
     .sideMenu li {
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    .menu-item {
+        width: 140px;
     }
     
     .namaApk li {
         font-weight: 700;
-        font-size: 24px;
+        font-size: 22px;
         text-align: center;
         padding: 25px 10px 25px 0px;
     }
 
     .custom-hr {
-        width: 140px;
+        width: 150px;
     }
 
     /* Style untuk Main */
     main {
         margin: 100px 50px 20px;
     }
+
+    .container h2 {
+        font-size: 18px;
+    }
     
-    main > p {
-        font-size: 15px;
+    p {
+        font-size: 16px;
     }
     
     th, td {
         padding: 5px;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     select {
-        font-size: 14px;
+        font-size: 16px;
     }
     
-    .pagination {
-        gap: 100px;
-        margin: 20px 0px;
+    #submitJawabanBtn {
+        font-size: 16px;
     }
 
-    #prev img, #next img {
-        width: 30px;
-    }
-    
-    #next {
-        padding-right: 85px;
-    }
-    
-    #prev img:hover, #next img:hover {
-        border-radius: 20px;
+    #btnLihatHasil {
+        font-size: 16px;
     }
 
-    #btnKirim {
-        font-size: 14px;
-        width: 110px;
+    /* Style untuk Pop Up */
+    .popup-content {
+        margin: 10% auto;
+    }
+
+    .popup-content > h2, h3 {
+        font-size: 18px;
+    }
+
+    .popup-content > p {
+        font-size: 16px;
+    }
+
+    .close {
+        font-size: 36px;
     }
 
     /* Style untuk Footer */
@@ -615,12 +779,12 @@ footer ul li {
 @media (min-width: 1347px) {
     /* Style untuk Header */
     header {
-        left: 217.65px;
-        padding: 15px 80px 5px 40px;
+        left: 240px;
+        padding: 20px 80px 10px 80px;
     }
 
     header h1 {
-        font-size: 22px;
+        font-size: 28px;
     }
     
     /* Style untuk Side Menu */
@@ -628,56 +792,74 @@ footer ul li {
         font-size: 18px;
         padding: 20px 10px 10px 30px;
     }
+
+    .menu-item {
+        width: 180px;
+    }
     
     .namaApk li {
         font-weight: 700;
         font-size: 28px;
         text-align: center;
-        padding: 40px 10px 25px 0px;
+        padding: 25px 10px 25px 0px;
     }
 
     .custom-hr {
-        width: 160px;
+        width: 185px;
     }
 
     /* Style untuk Main */
     main {
-        margin: 120px 100px 40px;
+        margin: 120px 100px 30px;
+    }
+
+    .container h2 {
+        font-size: 22px;
     }
     
-    main > p {
-        font-size: 17px;
+    p {
+        font-size: 18px;
     }
     
     th, td {
         padding: 5px;
-        font-size: 16px;
+        font-size: 18px;
     }
 
     select {
         font-size: 16px;
     }
     
-    .pagination {
-        gap: 140px;
-        margin: 20px 0px;
-    }
-
-    #prev img, #next img {
-        width: 30px;
-    }
-    
-    #next {
-        padding-right: 125px;
-    }
-
-    #prev img:hover, #next img:hover {
-        border-radius: 20px;
-    }
-
-    #btnKirim {
+    #submitJawabanBtn {
         font-size: 16px;
-        width: 120px;
+    }
+
+    #btnLihatHasil {
+        font-size: 16px;
+    }
+
+    /* Style untuk Pop Up */
+    .popup-content {
+        margin: 10% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        position: relative;
+        text-align: left;
+    }
+
+    .popup-content > h2, h3 {
+        font-size: 20px;
+    }
+
+    .popup-content > p {
+        font-size: 18px;
+    }
+
+    .close {
+        font-size: 38px;
     }
 
     /* Style untuk Footer */

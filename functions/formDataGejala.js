@@ -17,14 +17,9 @@ document.getElementById('btnKeFormDataDiri').addEventListener('click', function(
     window.location.href = "formDataDiri.html";
 });
 
-document.getElementById('btnKeFormDataGejala').addEventListener('click', function() {
-    window.location.href = "formDataGejala.html";
-});
-
 document.getElementById('btnKeRiwayatKonsultasi').addEventListener('click', function() {
     window.location.href = "riwayatKonsultasi.html";
 });
-
 
 document.addEventListener("DOMContentLoaded", function() {
     let dataDiriSubmitted = false;
@@ -42,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
 // WEB
 
 document.getElementById('btnKeBeranda2').addEventListener('click', function() {
@@ -57,30 +51,27 @@ document.getElementById('btnKeFormDataDiri2').addEventListener('click', function
     window.location.href = "formDataDiri.html";
 });
 
-document.getElementById('btnKeFormDataGejala2').addEventListener('click', function() {
-    window.location.href = "formDataGejala.html";
-});
-
 document.getElementById('btnKeRiwayatKonsultasi2').addEventListener('click', function() {
     window.location.href = "riwayatKonsultasi.html";
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    let dataDiriSubmitted = false;
+    let dataGejalaSubmitted = false;
 
-    const navButtonFormDataGejala = document.getElementById("btnKePerhitunganManual2");
+    const navButtonPerhitunganMetode = document.getElementById("btnKePerhitunganManual2");
 
-    navButtonFormDataGejala.addEventListener("click", function(event) {
-        if (!dataDiriSubmitted) {
+    navButtonPerhitunganMetode.addEventListener("click", function(event) {
+        if (!dataGejalaSubmitted) {
             alert("Anda harus mengisi form data gejala terlebih dahulu.");
             event.preventDefault();
         } else {
-            window.location.href = 'formPerhitunganManual.html';
+            window.location.href = 'perhitunganMetode';
         }
     });
 });
 
-const data = [
+
+const gejalaData = [
     { kode: 'G01', nama: 'Mual' },
     { kode: 'G02', nama: 'Muntah' },
     { kode: 'G03', nama: 'Perut kembung' },
@@ -114,105 +105,76 @@ const data = [
     { kode: 'G31', nama: 'Memiliki riwayat penyakit keluarga yang serius (penyakit lambung, diabetes, kanker, dsb.)' },
 ];
 
-const rowsPerPage = 8;
+const itemsPerPage = 8;
 let currentPage = 1;
-let checkedStatus = JSON.parse(localStorage.getItem('checkedStatus')) || {};
-let isSubmitted = JSON.parse(localStorage.getItem('isSubmitted')) || false;
+const selectedGejala = [];
 
-function displayTable(data, page) {
-    const tableBody = document.querySelector('#tabelDataGejala tbody');
-    tableBody.innerHTML = '';
-    
-    const start = (page - 1) * rowsPerPage;
-    const end = start + rowsPerPage;
-    const paginatedData = data.slice(start, end);
+function populateGejalaTable() {
+    const table = document.getElementById('tabelDataGejala').getElementsByTagName('tbody')[0];
+    table.innerHTML = ''; // Clear previous content
 
-    paginatedData.forEach(item => {
-        const isChecked = checkedStatus[item.kode] ? checkedStatus[item.kode].checked : false;
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${item.kode}</td>
-            <td class="left-align">${item.nama}</td>
-            <td><input type="checkbox" data-kode="${item.kode}" ${isChecked ? 'checked' : ''}></td>
-        `;
-        tableBody.appendChild(row);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const currentData = gejalaData.slice(startIndex, endIndex);
+
+    currentData.forEach(gejala => {
+        const row = table.insertRow();
+        row.insertCell(0).innerText = gejala.kode;
+        row.insertCell(1).innerText = gejala.nama;
+        const cell = row.insertCell(2);
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = selectedGejala.some(item => item.kode === gejala.kode);
+        checkbox.addEventListener('change', () => handleGejalaSelection(gejala, checkbox.checked));
+        cell.appendChild(checkbox);
     });
 
-    document.querySelectorAll('#tabelDataGejala input[type="checkbox"]').forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-            const kode = this.getAttribute('data-kode');
-            const nama = data.find(d => d.kode === kode).nama;
-            if (this.checked) {
-                checkedStatus[kode] = { checked: true, nama: nama };
-            } else {
-                delete checkedStatus[kode];
-            }
-            localStorage.setItem('checkedStatus', JSON.stringify(checkedStatus));
-        });
-    });
+    updatePaginationButtons();
 }
 
-function nextPage() {
-    if (currentPage * rowsPerPage < data.length) {
-        currentPage++;
-        displayTable(data, currentPage);
-    }
+function updatePaginationButtons() {
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    
+    prevButton.disabled = currentPage === 1;
+    nextButton.disabled = currentPage === Math.ceil(gejalaData.length / itemsPerPage);
 }
 
 function prevPage() {
     if (currentPage > 1) {
         currentPage--;
-        displayTable(data, currentPage);
+        populateGejalaTable();
     }
 }
 
-document.getElementById('btnKirim').addEventListener('click', function(event) {
-    event.preventDefault();
-
-    if (Object.keys(checkedStatus).length === 0) {
-        alert('Harap pilih gejala sebelum mengirim.');
-        return;
+function nextPage() {
+    if (currentPage < Math.ceil(gejalaData.length / itemsPerPage)) {
+        currentPage++;
+        populateGejalaTable();
     }
+}
 
-    localStorage.setItem('submittedData', JSON.stringify(checkedStatus));
-    localStorage.setItem('isSubmitted', true);
-    isSubmitted = true;
-    alert('Formulir Terkirim!');
+function handleGejalaSelection(gejala, isSelected) {
+    if (isSelected) {
+        selectedGejala.push(gejala);
+    } else {
+        const index = selectedGejala.findIndex(item => item.kode === gejala.kode);
+        if (index !== -1) {
+            selectedGejala.splice(index, 1);
+        }
+    }
+}
 
-    // Redirect to another page
-    window.location.href = "formDataTerpilih.html";
+document.getElementById('btnKirim').addEventListener('click', () => {
+    localStorage.setItem('selectedGejala', JSON.stringify(selectedGejala));
+    window.location.href = 'perhitunganMetode.html';
 });
 
-// Clear checkedStatus and checkboxes on page refresh
-window.addEventListener('load', function() {
-    if (performance.getEntriesByType("navigation")[0].type === "reload") {
-        checkedStatus = {};
-        isSubmitted = false;
-        localStorage.removeItem('checkedStatus');
-        localStorage.removeItem('isSubmitted');
-    }
-    displayTable(data, currentPage);
-});
+document.getElementById('prev').addEventListener('click', prevPage);
+document.getElementById('next').addEventListener('click', nextPage);
 
-window.addEventListener('beforeunload', function(event) {
-    if (!isSubmitted) {
-        const confirmationMessage = 'Anda belum mengirimkan data gejala. Apakah Anda yakin ingin meninggalkan halaman ini?';
-        event.preventDefault();
-        event.returnValue = confirmationMessage;
-        return confirmationMessage;
-    }
-});
+document.addEventListener('DOMContentLoaded', populateGejalaTable);
 
-// Cek jika pengguna menekan tombol back atau forward di browser
-window.addEventListener('popstate', function(event) {
-    if (!isSubmitted && performance.getEntriesByType("navigation")[0].type !== "reload") {
-        alert('Harap pilih gejala dan kirimkan data terlebih dahulu.');
-        window.history.pushState(null, null, window.location.pathname);
-    }
-});
 
-// Menambahkan state awal
-window.history.pushState(null, null, window.location.pathname);
 
-// Initial display
-displayTable(data, currentPage);
+

@@ -80,8 +80,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.getElementById('btnLihatHasil').addEventListener('click', function() {
-    window.location.href = "hasilDiagnosis.html";
+// Function to display a warning when the user attempts to reload the page
+window.addEventListener('beforeunload', function (e) {
+    // Custom message is deprecated, but this triggers the confirmation dialog
+    const confirmationMessage = 'Perubahan yang Anda buat mungkin tidak akan disimpan. Apakah Anda yakin ingin meninggalkan halaman ini?';
+
+    e.returnValue = confirmationMessage; // Legacy way of setting the message
+    return confirmationMessage; // Modern way of setting the message
 });
 
 
@@ -97,14 +102,54 @@ const jawabanOptions = {
 };
 
 const penyakitList = [
-    { kode: 'P01', nama: 'Dispepsia' },
-    { kode: 'P02', nama: 'Gastritis' },
-    { kode: 'P03', nama: 'Gastroesophageal Reflux Disease' },
-    { kode: 'P04', nama: 'Gastroparesis' },
-    { kode: 'P05', nama: 'Gastroenteritis' },
-    { kode: 'P06', nama: 'Polip Lambung' },
-    { kode: 'P07', nama: 'Tukak Lambung' },
-    { kode: 'P08', nama: 'Kanker Lambung' }
+    { 
+        kode: 'P01', 
+        nama: 'Sindrom Dispepsia',
+        treatment: 'Makan dalam porsi kecil, tetapi sering dan dianjurkan untuk makan 5–6 kali sehari',
+        prevention: 'Untuk mencegah sindrom dispepsia, hindari makanan berlemak, berminyak, asam, dan pedas. Berhenti mengonsumsi alkohol, kurangi minuman bersoda, berkafein, dan cokelat. Hentikan merokok dan kelola stres. Konsultasikan dengan dokter tentang penggunaan obat yang tepat.'
+    },
+    { 
+        kode: 'P02', 
+        nama: 'Gastritis',
+        treatment: '',
+        prevention: 'Mencuci tangan dengan air mengalir dan sabun untuk menghindari infeksi bakteri. Membatasi asupan minuman berkafein. Berhenti/tidak mengkonsumsi minuman beralkohol. Berkonsultasi dengan dokter sebelum mengonsumsi obat antiimflamasi nonsteroid, Mengurangi stres. Menjaga pola makan. Menghindari tidur setelah makan.'
+    },
+    { 
+        kode: 'P03', 
+        nama: 'Gastroesophageal Reflux Disease',
+        treatment: '',
+        prevention: 'Meninggikan kepala saat tidur, menggunakan bantal yang lebih tinggi. Menghindari tidur setelah makan. Menghindari makanan dan minuman yang meningkatkan produksi asam lambung berlebih. Hindari stres untuk mencegah peningkatan produksi asam lambung berlebih. Makan sedikit tapi sering.'
+    },
+    { 
+        kode: 'P04', 
+        nama: 'Gastroparesis',
+        treatment: '',
+        prevention: 'Jika mengidap diabetes, pastikan kadar glukosa terkontrol dengan baik. Pahami kemungkinan efek samping dari perawatan yang sedang dijalani dan ketahui apa yang harus dilakukan jika terjadi efek samping. Berkonsultasi dengan dokter sebelum mengkonsumsi obat-obatan.'
+    },
+    { 
+        kode: 'P05', 
+        nama: 'Gastroenteritis',
+        treatment:'',
+        prevention: 'Pemberian imunisasi rotavirus lengkap. Menjaga kebersihan. Mencuci tangan dengan sabun dan di air mengalir. Pastikan makanan telah diolah menggunakan peralatan masak yang bersih dan steril. Hindari menggunakan barang pribadi bersamaan, seperti alat makan dan handuk. Hindari mengonsumsi makanan mentah. Jaga jarak dengan penderita gastroenteritis.'
+    },
+    { 
+        kode: 'P06',
+        nama: 'Polip Lambung',
+        treatment: '',
+        prevention: 'Menjaga kebersihan tangan. Menjaga kebersihan makanan. Berkonsultasi dengan dokter dalam pemilihan obat-obatan.'
+    },
+    { 
+        kode: 'P07', 
+        nama: 'Tukak Lambung',
+        treatment: '',
+        prevention: 'Mencegah peningkatan produksi asam lambung berlebih, seperti menjaga pola makan, hindari stres, menghindari minuman beralkohol, bersoda, berkafein, berhenti/ tidak merokok. Berkonsultasi dengan dokter terkait obat yang akan dikonsumsi.'
+    },
+    { 
+        kode: 'P08', 
+        nama: 'Kanker Lambung',
+        treatment: '',
+        prevention: '"Menghindari atau menghentikan kebiasaan merokok dan mengonsumsi alkohol. Menghindari makanan yang diasap, olahan, cepat saji/makanan instan. Mengurangi konsumsi garam sesuai kebutuhan harian. Menerapkan pola makan sehat. Berolahraga secara teratur untuk menjaga berat badan.'
+    }
 ];
 
 const gejalaData = {
@@ -221,6 +266,7 @@ const cfPakarData = {
     }
 }
 
+
 function populateSelectedGejalaTable() {
     const table = document.getElementById('selectedGejalaTable').getElementsByTagName('tbody')[0];
     let selectedGejala = JSON.parse(localStorage.getItem('selectedGejala')) || [];
@@ -242,8 +288,8 @@ function populateSelectedGejalaTable() {
             option.text = text;
             select.appendChild(option);
         }
-        // Set nilai awal dari localStorage jika sudah disimpan sebelumnya
-        const cfUserBobot = localStorage.getItem(`CF_${gejala.kode}`) || '0';
+
+        const cfUserBobot = '0';
         select.value = cfUserBobot;
         select.addEventListener('change', () => updateBobot(row, select.value));
         selectCell.appendChild(select);
@@ -272,7 +318,7 @@ function updateCfUserInput(kodeGejala, bobot) {
 function calculateCF() {
     const table = document.getElementById('selectedGejalaTable').getElementsByTagName('tbody')[0];
     const cfTable = document.getElementById('tablesContainer');
-    cfTable.innerHTML = ''; // Clear any existing tables
+    cfTable.innerHTML = '';
     
     penyakitList.forEach(penyakit => {
         const tableContainer = document.createElement('div');
@@ -302,10 +348,8 @@ function calculateCF() {
 
         const tbody = table.querySelector('tbody');
 
-        // Ensure gejalaData[penyakit.kode] exists before accessing
         if (gejalaData[penyakit.kode]) {
             let selectedGejala = JSON.parse(localStorage.getItem('selectedGejala')) || [];
-            // Sort selectedGejala by kode
             selectedGejala.sort((a, b) => a.kode.localeCompare(b.kode));
             
             selectedGejala.forEach(gejala => {
@@ -337,6 +381,9 @@ function combineCF(cf1, cf2) {
 }
 
 function calculateDiseaseCF() {
+    let highestCF = -Infinity;
+    let diagnosedDisease = null;
+
     penyakitList.forEach(penyakit => {
         const tableContainer = document.getElementById('tablesContainer');
         const cfTable = tableContainer.querySelector(`#hasilPerhitungan${penyakit.kode}`).closest('.table-container');
@@ -352,9 +399,9 @@ function calculateDiseaseCF() {
         let isFirstCF = true;
 
         rows.forEach(row => {
-            const cfUser = parseFloat(row.cells[2].innerText.trim()); // Ambil nilai dari cell kolom Nilai CF Pengguna
-            if (!isNaN(cfUser)) { // Periksa apakah nilai adalah numerik
-                const cfPakar = parseFloat(row.cells[3].innerText.trim()); // Ambil nilai dari cell kolom Nilai CF Pakar
+            const cfUser = parseFloat(row.cells[2].innerText.trim());
+            if (!isNaN(cfUser)) {
+                const cfPakar = parseFloat(row.cells[3].innerText.trim());
                 const cfResult = cfUser * cfPakar;
                 row.cells[4].innerText = cfResult.toFixed(2);
 
@@ -370,13 +417,55 @@ function calculateDiseaseCF() {
         });
 
         document.getElementById(`hasilPerhitungan${penyakit.kode}`).innerText = `Total CF: ${combinedCF.toFixed(2)}`;
+
+        if (combinedCF > highestCF) {
+            highestCF = combinedCF;
+            diagnosedDisease = penyakit;
+        }
     });
+
+    return {
+        disease: diagnosedDisease,
+        cf: highestCF
+    };
 }
 
 document.getElementById('submitJawabanBtn').addEventListener('click', () => {
     document.getElementById('cfSection').classList.remove('hidden');
     calculateCF();
-    calculateDiseaseCF();
+    const { disease, cf } = calculateDiseaseCF();
+    const popup = document.getElementById('popup');
+    const openPopupBtn = document.getElementById('btnLihatHasil');
+    const closeBtn = document.querySelector('.close');
+    
+
+    closeBtn.addEventListener('click', () => {
+        popup.style.display = "none";
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === popup) {
+            popup.style.display = "none";
+        }
+    });
+
+    openPopupBtn.addEventListener('click', () => {
+        if (disease) {
+            const cfPercentage = (cf * 100).toFixed(0) + "%";
+            const diagnosis = `Anda memiliki diagnosis awal Penyakit ${disease.nama} berdasarkan hasil perhitungan dengan nilai tertinggi yaitu ${cfPercentage}.`;
+            const prevention = disease.prevention;
+            const treatment = disease.treatment;
+    
+            document.getElementById('diagnosisResult').innerText = diagnosis;
+            document.getElementById('treatmentAdvice').innerText = treatment;
+            document.getElementById('preventionAdvice').innerText = prevention;
+        } else {
+            console.error('Tidak ada penyakit yang terdiagnosis.');
+        }
+
+        // Tampilkan popup
+        popup.style.display = "block";
+    });
 });
 
 document.addEventListener('DOMContentLoaded', populateSelectedGejalaTable);

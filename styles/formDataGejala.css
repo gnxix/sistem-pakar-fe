@@ -86,8 +86,13 @@ header h2 {
     cursor: pointer;
 }
 
+#btnKeFormDataGejala2 {
+    font-weight: bold;
+}
+
 .menu-item:hover {
     background-color: rgb(102, 159, 118, 1);
+    font-weight: bold;
 }
 
 .burgerMenu li a {
@@ -144,7 +149,7 @@ table {
 
 td.left-align {
     width: 100%;
-    text-align: left;
+    text-align: center;
 }
 
 table, th, td {
@@ -195,9 +200,9 @@ th {
     border: 2px solid #73B385;
     border-radius: 20px;
     color: white;
-    padding: 0px 6px;
+    padding: 0px 5px;
     font-size: 8px;
-    width: 60px;
+    width: 50px;
     cursor: pointer;
 }
 
@@ -244,8 +249,25 @@ footer ul li {
 
 @media (min-width: 375px) {
     /* Style untuk Main */
+    main > p {
+        font-size: 10px;
+    }
+
+    th, td {
+        font-size: 10px;
+    }
+
+    .pagination {
+        gap: 40px;
+    }
+
     #next {
-        padding-right: 30px;
+        padding-right: 3px;
+    }
+
+    #btnKirim {
+        font-size: 10px;
+        width: 65px;
     }
 
     /* Style untuk Footer */
@@ -274,22 +296,15 @@ footer ul li {
     }
 
     th, td {
-        padding: 5px;
         font-size: 10px;
-        text-align: center;
     }
 
     .pagination {
-        gap: 30px;
-        margin: 20px 0px;
+        gap: 50px;
     }
 
     #next {
-        padding-right: 40px;
-    }
-
-    #prev img, #next img {
-        width: 22px;
+        padding-right: 3px;
     }
 
     #btnKirim {
@@ -321,11 +336,11 @@ footer ul li {
     }
 
     header {
-        left: 165.10px;
+        left: 155px;
     }
 
     header h1 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     /* Style untuk Side Menu */
@@ -342,21 +357,25 @@ footer ul li {
     }
     
     .sideMenu li {
-        padding: 10px 10px 10px 30px;
+        padding: 10px 10px 10px 20px;
         text-align: left;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: lighter;
+    }
+
+    .menu-item {
+        width: 105px;
     }
     
     .namaApk li {
         font-weight: 700;
-        font-size: 18px;
+        font-size: 16px;
         text-align: center;
         padding: 25px 10px 25px 0px;
     }
 
     .custom-hr {
-        width: 110px;
+        width: 115px;
     }
 
     /* Style untuk Main */
@@ -378,12 +397,12 @@ footer ul li {
     }
     
     .pagination {
-        gap: 40px;
+        gap: 45px;
         margin: 20px 0px;
     }
     
     #next {
-        padding-right: 20px;
+        padding-right: 7px;
     }
     
     #prev img, #next img {
@@ -391,8 +410,8 @@ footer ul li {
     }
     
     #btnKirim {
-        font-size: 12px;
-        width: 65px;
+        font-size: 11px;
+        width: 75px;
     }
     
     #btnKirim:hover {
@@ -410,9 +429,42 @@ footer ul li {
 }
 
 @media (min-width: 667px) {
+    /* Style untuk Header */
+    header {
+        left: 165.10px;
+    }
+
+    /* Style untuk Side Menu */
+    .sideMenu li {
+        padding: 10px 10px 10px 20px;
+        font-size: 12px;
+    }
+
+    .menu-item {
+        width: 115px;
+    }
+    
+    .namaApk li {
+        font-size: 18px;
+        padding: 25px 10px 25px 0px;
+    }
+
+    .custom-hr {
+        width: 130px;
+    }
+
     /* Style untuk Main */
+    .pagination {
+        gap: 55px;
+    }
+
     #next {
-        padding-right: 55px;
+        padding-right: 10px;
+    }
+
+    #btnKirim {
+        font-size: 11px;
+        width: 85px;
     }
 
     /* Style untuk Footer */
@@ -447,7 +499,7 @@ footer ul li {
 @media (min-width: 768px) {
     /* Style untuk Header */
     header {
-        left: 173.85px;
+        left: 185px;
     }
 
     header h1 {
@@ -456,10 +508,14 @@ footer ul li {
 
     /* Style untuk Side Menu */
     .sideMenu li {
-        padding: 10px 10px 10px 30px;
+        padding: 10px 10px 10px 20px;
         text-align: left;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: lighter;
+    }
+
+    .menu-item {
+        width: 135px;
     }
     
     .namaApk li {
@@ -470,7 +526,7 @@ footer ul li {
     }
 
     .custom-hr {
-        width: 120px;
+        width: 150px;
     }
 
     /* Style untuk Main */
@@ -488,17 +544,17 @@ footer ul li {
     }
     
     .pagination {
-        gap: 60px;
+        gap: 75px;
         margin: 20px 0px;
     }
     
     #next {
-        padding-right:60px;
+        padding-right: 8px;
     }
 
     #btnKirim {
         font-size: 13px;
-        width: 75px;
+        width: 95px;
     }
 
     /* Style untuk Footer */
@@ -533,37 +589,41 @@ footer ul li {
 @media (min-width: 1024px) {
     /* Style untuk Header */
     header {
-        left: 200.14px;
+        left: 190px;
         padding: 15px 50px 5px;
     }
 
     header h1 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     /* Style untuk Side Menu */
     .sideMenu li {
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    .menu-item {
+        width: 140px;
     }
     
     .namaApk li {
         font-weight: 700;
-        font-size: 24px;
+        font-size: 22px;
         text-align: center;
         padding: 25px 10px 25px 0px;
     }
 
     .custom-hr {
-        width: 140px;
+        width: 150px;
     }
 
     /* Style untuk Main */
     main {
-        margin: 100px 50px 20px;
+        margin: 100px 100px 20px;
     }
     
     main > p {
-        font-size: 15px;
+        font-size: 14px;
     }
     
     th, td {
@@ -572,7 +632,7 @@ footer ul li {
     }
     
     .pagination {
-        gap: 100px;
+        gap: 110px;
         margin: 20px 0px;
     }
 
@@ -581,7 +641,7 @@ footer ul li {
     }
     
     #next {
-        padding-right: 85px;
+        padding-right: 10px;
     }
 
     
@@ -591,7 +651,7 @@ footer ul li {
 
     #btnKirim {
         font-size: 14px;
-        width: 85px;
+        width: 100px;
     }
 
     /* Style untuk Footer */
@@ -615,7 +675,7 @@ footer ul li {
     }
 
     footer h3 {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     footer p {
@@ -626,18 +686,22 @@ footer ul li {
 @media (min-width: 1347px) {
     /* Style untuk Header */
     header {
-        left: 217.65px;
-        padding: 15px 80px 5px 40px;
+        left: 240px;
+        padding: 20px 80px 10px 80px;
     }
 
     header h1 {
-        font-size: 22px;
+        font-size: 28px;
     }
     
     /* Style untuk Side Menu */
     .sideMenu li {
         font-size: 18px;
         padding: 20px 10px 10px 30px;
+    }
+
+    .menu-item {
+        width: 180px;
     }
     
     .namaApk li {
@@ -648,44 +712,48 @@ footer ul li {
     }
 
     .custom-hr {
-        width: 160px;
+        width: 185px;
     }
 
     /* Style untuk Main */
     main {
-        margin: 120px 100px 40px;
+        margin: 120px 100px 30px;
     }
     
     main > p {
-        font-size: 17px;
+        font-size: 20px;
     }
     
     th, td {
-        padding: 5px;
-        font-size: 16px;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    input{
+        height: 20px;
+        width: 20px;
     }
     
     .pagination {
-        gap: 140px;
+        gap: 170px;
         margin: 20px 0px;
     }
 
     #prev img, #next img {
-        width: 30px;
+        width: 40px;
     }
     
     #next {
-        padding-right: 125px;
+        padding-right: 15px;
     }
 
-    
     #prev img:hover, #next img:hover {
         border-radius: 20px;
     }
 
     #btnKirim {
-        font-size: 16px;
-        width: 85px;
+        font-size: 18px;
+        width: 130px;
     }
 
     /* Style untuk Footer */
@@ -714,5 +782,11 @@ footer ul li {
 
     footer p {
         font-size: 16px;
+    }
+}
+
+@media (min-width: 1440px) {
+    #next {
+        padding-right: 60px;
     }
 }

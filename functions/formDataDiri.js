@@ -8,7 +8,7 @@ document.getElementById("burgerButton").addEventListener("click", function() {
 document.getElementById('personal-data-form').addEventListener('submit', function(event) {
     event.preventDefault();
     alert('Formulir Terkirim!');
-    window.location.href = "contoh.html";
+    window.location.href = "formDataGejala.html";
 });
 
 document.getElementById('btnKeBeranda').addEventListener('click', function() {
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("Anda harus mengisi form data diri terlebih dahulu.");
             event.preventDefault();
         } else {
-            window.location.href = 'contoh.html';
+            window.location.href = 'formDataGejala.html';
         }
     });
 });
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("Anda harus mengisi form data diri terlebih dahulu.");
             event.preventDefault();
         } else {
-            window.location.href = 'contoh.html';
+            window.location.href = 'formDataGejala.html';
         }
     });
 });

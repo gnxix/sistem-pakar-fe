@@ -75,7 +75,7 @@ header h2 {
 .custom-hr {
     border: none;
     height: 0.5px;
-    width: 95px;
+    width: 100px;
     background-color: white;
     margin: 0 auto;
 }
@@ -87,6 +87,10 @@ header h2 {
 .menu-item {
     padding: 10px;
     cursor: pointer;
+}
+
+#btnKeKonsultasi2 {
+    font-weight: bold;
 }
 
 .menu-item:hover {
@@ -171,16 +175,16 @@ img {
 }
 
 .submit {
-    font-weight: bold;
     background-color: #5B8E69;
     border: 2px solid #73B385;
     border-radius: 20px;
     color: white;
-    padding: 5px 10px;
+    padding: 3px 10px;
     font-size: 10px;
     width: fit-content;
     cursor: pointer;
     font-family: "Nunito", "sans-serif";
+    font-weight: 400;
 }
 
 .submit:hover {
@@ -283,13 +287,14 @@ footer ul li {
     }
 
     header {
-        left: 147px;
+        left: 155px;
     }
 
     header h1 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
+    /* Style untuk Side Menu */
     .sideMenu {
         grid-row: 1 / 2;
         grid-column: 1 / 2;
@@ -303,15 +308,23 @@ footer ul li {
     }
     
     .sideMenu li {
-        padding: 10px 10px 10px 30px;
+        padding: 10px 10px 10px 20px;
         text-align: left;
-        font-size: 10px;
+        font-size: 11px;
         font-weight: lighter;
+    }
+
+    .custom-hr{
+        width: 115px;
+    }
+
+    .menu-item {
+        width: 105px;
     }
     
     .namaApk li {
         font-weight: 700;
-        font-size: 18px;
+        font-size: 16px;
         text-align: center;
         padding: 25px 10px 25px 0px;
     }
@@ -340,16 +353,16 @@ footer ul li {
     }
 
     h2 {
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .main-body p {
-        font-size: 12px;
+        font-size: 11px;
 
     }
     
     .submit {
-        font-size: 12px;
+        font-size: 11px;
     }
     
     /* Style untuk Footer */
@@ -365,13 +378,17 @@ footer ul li {
 @media (min-width: 667px) {
     /* Style untuk Header */
     header {
-        left: 165.10px;
+        left: 165px;
     }
     
     /* Style untuk Side Menu */
     .sideMenu li {
-        padding: 10px 10px 10px 30px;
+        padding: 10px 10px 10px 20px;
         font-size: 12px;
+    }
+
+    .menu-item {
+        width: 115px;
     }
     
     .namaApk li {
@@ -380,12 +397,20 @@ footer ul li {
     }
 
     .custom-hr {
-        width: 110px;
+        width: 130px;
     }
 
     /* Style untuk Main */
+    h2 {
+        font-size: 16px; 
+    }
+
     .isi-main2 > div > img {
         width: 200px;
+    }
+
+    .submit {
+        font-size: 11px;
     }
     
     
@@ -421,7 +446,7 @@ footer ul li {
 @media (min-width: 768px) {
     /* Style untuk Header */
     header {
-        left: 173.85px;
+        left: 185px;
         padding: 10px 40px 0px;
     }
 
@@ -429,13 +454,18 @@ footer ul li {
         font-size: 20px;
     }
     
+    /* Style untuk Side Menu */
     .sideMenu li {
-        padding: 10px 10px 10px 30px;
+        padding: 10px 10px 10px 20px;
         text-align: left;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: lighter;
     }
     
+    .menu-item {
+        width: 135px;
+    }
+
     .namaApk li {
         font-weight: 700;
         font-size: 20px;
@@ -444,7 +474,7 @@ footer ul li {
     }
 
     .custom-hr {
-        width: 120px;
+        width: 150px;
     }
 
     /* Style untuk Main */
@@ -467,7 +497,7 @@ footer ul li {
     }
 
     h2 {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .main-body p {
@@ -475,7 +505,7 @@ footer ul li {
     }
     
     .submit {
-        font-size: 12px;
+        font-size: 13px;
     }
     
     /* Style untuk Footer */
@@ -510,7 +540,7 @@ footer ul li {
 @media (min-width: 1024px) {
     /* Style untuk Header */
     header {
-        left: 200.14px;
+        left: 190px;
         padding: 15px 50px 5px;
     }
 
@@ -520,23 +550,27 @@ footer ul li {
     
     /* Style untuk Side Menu */
     .sideMenu li {
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    .menu-item {
+        width: 140px;
     }
     
     .namaApk li {
         font-weight: 700;
-        font-size: 24px;
+        font-size: 22px;
         text-align: center;
         padding: 25px 10px 25px 0px;
     }
 
     .custom-hr {
-        width: 140px;
+        width: 150px;
     }
 
     /* Style untuk Main */
     main {
-        margin: 100px 50px 0px;
+        margin: 100px 100px 0px;
     }
 
     .isi-main2 > div > img {
@@ -544,11 +578,11 @@ footer ul li {
     }
 
     h2 {
-        font-size: 24px;
+        font-size: 20px;
     }
     
     .main-body p {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 30px;
     }
     
@@ -577,7 +611,7 @@ footer ul li {
     }
 
     footer h3 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     footer p {
@@ -588,12 +622,12 @@ footer ul li {
 @media (min-width: 1347px) {
     /* Style untuk Header */
     header {
-        left: 217.65px;
-        padding: 15px 80px 5px 40px;
+        left: 240px;
+        padding: 20px 80px 10px 80px;
     }
 
     header h1 {
-        font-size: 22px;
+        font-size: 28px;
     }
     
     /* Style untuk Side Menu */
@@ -603,16 +637,20 @@ footer ul li {
         font-size: 18px;
         font-weight: lighter;
     }
+
+    .menu-item {
+        width: 180px;
+    }
     
     .namaApk li {
         font-weight: 700;
-        font-size: 24px;
+        font-size: 28px;
         text-align: center;
         padding: 25px 10px 25px 0px;
     }
 
     .custom-hr {
-        width: 160px;
+        width: 185px;
     }
 
     /* Style untuk Main */
@@ -636,7 +674,7 @@ footer ul li {
     .submit {
         font-size: 18px;
         width: 220px;
-        height: 50px;
+        height: 40px;
     }
     
     /* Style untuk Footer */
@@ -660,10 +698,10 @@ footer ul li {
     }
 
     footer h3 {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     footer p {
-        font-size: 16px;
+        font-size: 18px;
     }
 }

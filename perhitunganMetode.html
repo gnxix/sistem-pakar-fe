@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-        </style>
-    <link rel="stylesheet" href="./styles/formDataTerpilih.css">
-    <title>Hasil Diagnosis Awal</title>
+    </style>
+    <link rel="stylesheet" href="./styles/perhitunganMetode.css">
+    <title>Perhitungan Metode</title>
 </head>
 <body>
     <div class="container">
@@ -22,7 +22,7 @@
                 <div class="subKonsultasi">
                     <li class="menu-item" id="btnKeFormDataDiri2">Form Data Diri</li>
                     <li class="menu-item" id="btnKeFormDataGejala2">Form Data Gejala</li>
-                    <li class="menu-item" id="btnKePerhitunganManual2">Perhitungan Manual</li>
+                    <li class="menu-item" id="btnKePerhitunganManual2">Perhitungan Metode</li>
                 </div>
                 <li class="menu-item" id="btnKeRiwayatKonsultasi2">Riwayat Konsultasi</li>
             </ul>
@@ -42,32 +42,56 @@
                 <div class="subKonsultasi">
                     <li class="menu-item" id="btnKeFormDataDiri">Form Data Diri</li>
                     <li class="menu-item" id="btnKeFormDataGejala">Form Data Gejala</li>
-                    <li class="menu-item" id="btnKePerhitunganManual">Perhitungan Manual</li>
+                    <li class="menu-item" id="btnKePerhitunganManual">Perhitungan Metode</li>
                 </div>
                 <li class="menu-item" id="btnKeRiwayatKonsultasi">Riwayat Konsultasi</li>
             </ul>
-            <h1>Hasil Diagnosis Awal</h1>
+            <h1>Perhitungan Metode CF</h1>
         </header>
 
         <main>
-            <p> Berikut ini merupakan hasil diagnosis awal anda:</p>
-            <p> Berdasarkan hasil dari perhitungan yang dilakukan sebelumnya, anda berpotensi mengidap penyakit:</p>
-            <div>
-                <table id="tabelLangkah1">
-                    <thead>
-                        <tr>
-                            <th class="left-align"></th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-                <div class="pagination">
-                    <button id="btnKirim" type="submit">KIRIM</button>
+            <h2>Gejala Terpilih</h2>
+            <table id="selectedGejalaTable">
+                <thead>
+                    <tr>
+                        <th>Kode Gejala</th>
+                        <th>Nama Gejala</th>
+                        <th>Pilihan Jawaban</th>
+                        <th>Bobot</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="kirim">
+                <button id="submitJawabanBtn">KIRIM JAWABAN</button>
+            </div>
+            <div id="cfSection" class="hidden">
+                <hr class="custom-hr2">
+                <h2>Perhitungan Metode Certainty Factor</h2>
+                <p>
+                    Berikut ini merupakan tahap perhitungan metode Certainty Factor yang digunakan untuk mencari hasil diagnosis awal penyakit lambung berdasarkan gejala yang dirasakan oleh pengguna. Hasil perhitungan metode dapat dilihat pada tabel di bawah ini.
+                </p>
+                <div class="pagination2">
+                    <button id="btnLihatHasil" type="submit">LIHAT HASIL DIAGNOSIS AWAL</button>
+                </div>
+                <div id="tablesContainer"></div>
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                        <span class="close">&times;</span>
+                        <h2>Hasil Diagnosis</h2>
+                        <p id="diagnosisResult"></p>
+                        <h3>Saran Penanganan</h3>
+                        <p id="treatmentAdvice"></p>
+                        <h3>Saran Pencegahan</h3>
+                        <p id="preventionAdvice"></p>
+                    </div>
                 </div>
             </div>
         </main>
     </div>
+
     <div id="overlay"></div>
+
     <footer>
         <div>
          <div class="isi-footer">
@@ -109,7 +133,6 @@
          </p>
         </div>
     </footer>
-
-    <script src="./functions/perhitunganManual.js"></script>
+    <script src="./functions/perhitunganMetode.js"></script>
 </body>
 </html>
