@@ -101,54 +101,216 @@ const jawabanOptions = {
     'Sangat Yakin': 1
 };
 
+const saranPenangananGejala = {
+    P01: {
+        'Mual': { saran: 'Cobalah minum teh jahe hangat atau makan camilan ringan seperti biskuit.' },
+        'Muntah': { saran: 'Minumlah air secara perlahan dan hindari makan makanan berat atau berminyak.' },
+        'Perut kembung': { saran: 'Hindari minuman bersoda dan makan dalam porsi kecil namun sering.' },
+        'Cepat merasa kenyang': { saran: 'Makanlah dengan porsi kecil lebih sering dan hindari makan terlalu cepat.' },
+        'Nyeri pada ulu hati': { saran: 'Hindari makanan pedas, asam, dan minuman berkafein. Cobalah mengonsumsi makanan yang lembut.' },
+        'Tidak nafsu makan': { saran: 'Konsumsi makanan yang ringan dan mudah dicerna seperti sup kaldu atau buah-buahan.' },
+        'Penurunan berat badan tanpa alasan yang jelas': { saran: 'Periksakan diri ke dokter untuk evaluasi lebih lanjut dan konsultasikan dengan ahli gizi.' },
+        'Anemia': { saran: 'Konsumsi makanan tinggi zat besi seperti daging merah, hati, dan sayuran hijau. Pertimbangkan suplemen zat besi jika diperlukan.' }
+    },
+    P02: {
+        'Mual': { saran: 'Hindari makanan berlemak dan berminyak, serta cobalah minum air jahe.' },
+        'Muntah': { saran: 'Minumlah air dalam tegukan kecil dan istirahatlah dalam posisi duduk.' },
+        'Perut kembung': { saran: 'Hindari makanan yang memproduksi gas, seperti kacang-kacangan dan minuman bersoda.' },
+        'Cepat merasa kenyang': { saran: 'Makanlah dalam porsi kecil dan hindari makanan yang berlemak.' },
+        'Nyeri pada ulu hati': { saran: 'Hindari makanan pedas dan asam. Konsumsi susu atau makanan yang dapat menetralkan asam.' },
+        'Tidak nafsu makan': { saran: 'Makanlah makanan yang mudah dicerna dan berkalori tinggi untuk membantu meningkatkan nafsu makan.' },
+        'Perut terasa panas': { saran: 'Hindari makanan pedas, dan konsumsi makanan dingin atau netral.' },
+        'Penurunan berat badan tanpa alasan yang jelas': { saran: 'Segera konsultasikan dengan dokter untuk pemeriksaan lebih lanjut.' },
+        'Kondisi tubuh lemah': { saran: 'Konsumsi makanan yang bergizi dan pastikan mendapatkan cukup istirahat.' },
+        'Nyeri pada perut': { saran: 'Hindari makanan yang dapat memicu nyeri dan gunakan kompres hangat pada perut.' },
+        'Mulas': { saran: 'Hindari makanan pedas dan asam, serta cobalah minum air putih atau susu untuk meredakan mulas.' },
+        'Cegukan': { saran: 'Minum air dingin secara perlahan atau menahan napas selama beberapa detik.' },
+        'BAB dengan tinja berwarna hitam atau berdarah': { saran: 'Segera konsultasi dengan dokter untuk evaluasi lebih lanjut.' },
+        'Anemia': { saran: 'Konsumsi makanan kaya zat besi dan pertimbangkan suplemen jika diperlukan. Konsultasikan dengan dokter untuk pemeriksaan lebih lanjut.' },
+        'Memiliki riwayat penyakit keluarga yang serius': { saran: 'Lakukan pemeriksaan kesehatan secara rutin dan konsultasikan dengan dokter untuk evaluasi.' }
+    },
+    P03: {
+        'Mual': { saran: 'Minum air jahe hangat atau teh herbal, dan makan makanan ringan yang mudah dicerna.' },
+        'Muntah': { saran: 'Minum air putih dalam tegukan kecil dan hindari makanan berat.' },
+        'Rasa terbakar di tenggorokan': { saran: 'Hindari makanan pedas dan asam, serta cobalah minum susu atau air dingin.' },
+        'Sulit menelan': { saran: 'Konsumsi makanan lunak dan cair seperti sup atau yogurt.' },
+        'Dada terasa panas': { saran: 'Hindari berbaring setelah makan dan konsumsi makanan yang tidak mengiritasi lambung.' },
+        'Naiknya makanan atau cairan asam dari lambung ke mulut': { saran: 'Tidurkan kepala lebih tinggi dan hindari makanan pemicu seperti makanan pedas.' },
+        'Sulit menarik napas': { saran: 'Hindari aktivitas berat dan konsultasikan dengan dokter jika gejala berlanjut.' },
+        'Radang tenggorokan': { saran: 'Berkumur dengan air garam hangat dan minum teh hangat.' },
+        'Rasa pahit atau asam di mulut': { saran: 'Konsumsi permen karet bebas gula atau bilas mulut dengan air bersih.' },
+        'Suara serak': { saran: 'Istirahatkan suara dan hindari berbicara keras atau panjang.' },
+        'Kerusakan gigi karena terkena asam lambung': { saran: 'Bilas mulut dengan air setelah muntah dan konsultasikan dengan dokter gigi.' },
+        'Bau mulut': { saran: 'Sikat gigi secara teratur, gunakan benang gigi, dan bilas mulut dengan obat kumur.' }
+    },
+    P04: {
+        'Mual': { saran: 'Hindari makanan berat dan berminyak, dan cobalah minum air jahe.' },
+        'Muntah': { saran: 'Minum cairan dalam tegukan kecil dan hindari makanan padat.' },
+        'Perut kembung': { saran: 'Hindari makanan yang menghasilkan gas dan minuman bersoda.' },
+        'Cepat merasa kenyang': { saran: 'Makan dalam porsi kecil dan sering, serta hindari makanan berlemak.' },
+        'Nyeri pada ulu hati': { saran: 'Hindari makanan pedas dan asam. Cobalah makanan yang lembut seperti oatmeal.' },
+        'Tidak nafsu makan': { saran: 'Konsumsi makanan ringan dan bernutrisi, dan pertimbangkan suplemen jika diperlukan.' },
+        'Sulit menelan': { saran: 'Konsumsi makanan lunak dan hindari makanan keras atau kasar.' },
+        'Kenyang dalam waktu yang lama setelah makan': { saran: 'Makan dalam porsi kecil dan hindari makanan berat.' },
+        'Kondisi tubuh lemah': { saran: 'Konsumsi makanan bergizi dan pastikan mendapatkan istirahat yang cukup.' },
+        'Nyeri pada perut': { saran: 'Hindari makanan yang memicu nyeri dan gunakan kompres hangat jika diperlukan.' },
+        'Mulas': { saran: 'Hindari makanan pedas dan asam, serta minum air putih untuk meredakan mulas.' },
+        'Cegukan': { saran: 'Minum air dingin perlahan atau menahan napas.' },
+        'BAB dengan tinja berwarna hitam atau berdarah': { saran: 'Segera konsultasikan dengan dokter.' },
+        'Anemia': { saran: 'Konsumsi makanan kaya zat besi dan pertimbangkan suplemen jika diperlukan.' }
+    },
+    P05: {
+        'Mual': { saran: 'Minum air hangat dengan sedikit madu atau makan camilan ringan.' },
+        'Muntah': { saran: 'Minum air dalam tegukan kecil dan hindari makanan berat.' },
+        'Tidak nafsu makan': { saran: 'Makanlah dalam porsi kecil namun sering dan pilih makanan yang mudah dicerna.' },
+        'Sering diare': { saran: 'Minum banyak cairan untuk mencegah dehidrasi dan hindari makanan yang dapat memperburuk diare.' },
+        'Nyeri pada perut': { saran: 'Hindari makanan pedas dan asam, serta gunakan kompres hangat pada perut.' },
+        'Keram perut': { saran: 'Konsumsi makanan yang lembut dan hindari makanan yang mengandung gas.' },
+        'Rasa pahit atau asam di mulut': { saran: 'Bilas mulut dengan air bersih atau gunakan permen karet bebas gula.' }
+    },
+    P06: {
+        'Mual': { saran: 'Minum teh jahe atau camilan ringan untuk meredakan mual.' },
+        'Muntah': { saran: 'Minum air perlahan dan makan makanan yang mudah dicerna.' },
+        'Nyeri pada perut': { saran: 'Hindari makanan yang mengiritasi perut dan gunakan kompres hangat.' },
+        'Memiliki riwayat penyakit keluarga yang serius': { saran: 'Lakukan pemeriksaan rutin dan konsultasikan dengan dokter.' }
+    },
+    P07: {
+        'Mual': { saran: 'Minum air jahe atau makan makanan ringan seperti biskuit.' },
+        'Muntah': { saran: 'Minum air dalam tegukan kecil dan hindari makanan berat.' },
+        'Perut kembung': { saran: 'Hindari makanan yang menghasilkan gas dan makan dalam porsi kecil.' },
+        'Cepat merasa kenyang': { saran: 'Makan dalam porsi kecil dan hindari makanan yang berat.' },
+        'Nyeri pada ulu hati': { saran: 'Hindari makanan pedas dan asam serta cobalah makanan lembut.' },
+        'Tidak nafsu makan': { saran: 'Konsumsi makanan ringan dan bernutrisi.' },
+        'Diare': { saran: 'Minum banyak cairan untuk mencegah dehidrasi dan hindari makanan yang memicu diare.' },
+        'Kelelahan': { saran: 'Istirahat yang cukup dan konsumsi makanan bergizi.' }
+    }
+};
+
 const penyakitList = [
     { 
         kode: 'P01', 
         nama: 'Sindrom Dispepsia',
-        treatment: 'Makan dalam porsi kecil, tetapi sering dan dianjurkan untuk makan 5–6 kali sehari',
+        treatment: {
+            'Mual': saranPenangananGejala.P01['Mual'].saran,
+            'Muntah': saranPenangananGejala.P01['Muntah'].saran,
+            'Perut kembung': saranPenangananGejala.P01['Perut kembung'].saran,
+            'Cepat merasa kenyang': saranPenangananGejala.P01['Cepat merasa kenyang'].saran,
+            'Nyeri pada ulu hati': saranPenangananGejala.P01['Nyeri pada ulu hati'].saran,
+            'Tidak nafsu makan': saranPenangananGejala.P01['Tidak nafsu makan'].saran,
+            'Penurunan berat badan tanpa alasan yang jelas': saranPenangananGejala.P01['Penurunan berat badan tanpa alasan yang jelas'].saran,
+            'Anemia': saranPenangananGejala.P01['Anemia'].saran
+        },
         prevention: 'Untuk mencegah sindrom dispepsia, hindari makanan berlemak, berminyak, asam, dan pedas. Berhenti mengonsumsi alkohol, kurangi minuman bersoda, berkafein, dan cokelat. Hentikan merokok dan kelola stres. Konsultasikan dengan dokter tentang penggunaan obat yang tepat.'
     },
     { 
         kode: 'P02', 
         nama: 'Gastritis',
-        treatment: '',
+        treatment: {
+            'Mual': saranPenangananGejala.P02['Mual'].saran,
+            'Muntah': saranPenangananGejala.P02['Muntah'].saran,
+            'Perut kembung': saranPenangananGejala.P02['Perut kembung'].saran,
+            'Cepat merasa kenyang': saranPenangananGejala.P02['Cepat merasa kenyang'].saran,
+            'Nyeri pada ulu hati': saranPenangananGejala.P02['Nyeri pada ulu hati'].saran,
+            'Tidak nafsu makan': saranPenangananGejala.P02['Tidak nafsu makan'].saran,
+            'Perut terasa panas': saranPenangananGejala.P02['Perut terasa panas'].saran,
+            'Penurunan berat badan tanpa alasan yang jelas': saranPenangananGejala.P02['Penurunan berat badan tanpa alasan yang jelas'].saran,
+            'Kondisi tubuh lemah': saranPenangananGejala.P02['Kondisi tubuh lemah'].saran,
+            'Nyeri pada perut': saranPenangananGejala.P02['Nyeri pada perut'].saran,
+            'Mulas': saranPenangananGejala.P02['Mulas'].saran,
+            'Cegukan': saranPenangananGejala.P02['Cegukan'].saran,
+            'BAB dengan tinja berwarna hitam atau berdarah': saranPenangananGejala.P02['BAB dengan tinja berwarna hitam atau berdarah'].saran,
+            'Anemia': saranPenangananGejala.P02['Anemia'].saran,
+            'Memiliki riwayat penyakit keluarga yang serius': saranPenangananGejala.P02['Memiliki riwayat penyakit keluarga yang serius'].saran
+        },
         prevention: 'Mencuci tangan dengan air mengalir dan sabun untuk menghindari infeksi bakteri. Membatasi asupan minuman berkafein. Berhenti/tidak mengkonsumsi minuman beralkohol. Berkonsultasi dengan dokter sebelum mengonsumsi obat antiimflamasi nonsteroid, Mengurangi stres. Menjaga pola makan. Menghindari tidur setelah makan.'
     },
     { 
         kode: 'P03', 
         nama: 'Gastroesophageal Reflux Disease',
-        treatment: '',
+        treatment: {
+            'Mual': saranPenangananGejala.P03['Mual'].saran,
+            'Muntah': saranPenangananGejala.P03['Muntah'].saran,
+            'Rasa terbakar di tenggorokan': saranPenangananGejala.P03['Rasa terbakar di tenggorokan'].saran,
+            'Sulit menelan': saranPenangananGejala.P03['Sulit menelan'].saran,
+            'Dada terasa panas': saranPenangananGejala.P03['Dada terasa panas'].saran,
+            'Naiknya makanan atau cairan asam dari lambung ke mulut': saranPenangananGejala.P03['Naiknya makanan atau cairan asam dari lambung ke mulut'].saran,
+            'Sulit menarik napas': saranPenangananGejala.P03['Sulit menarik napas'].saran,
+            'Radang tenggorokan': saranPenangananGejala.P03['Radang tenggorokan'].saran,
+            'Rasa pahit atau asam di mulut': saranPenangananGejala.P03['Rasa pahit atau asam di mulut'].saran,
+            'Suara serak': saranPenangananGejala.P03['Suara serak'].saran,
+            'Kerusakan gigi karena terkena asam lambung': saranPenangananGejala.P03['Kerusakan gigi karena terkena asam lambung'].saran,
+            'Bau mulut': saranPenangananGejala.P03['Bau mulut'].saran
+        },
         prevention: 'Meninggikan kepala saat tidur, menggunakan bantal yang lebih tinggi. Menghindari tidur setelah makan. Menghindari makanan dan minuman yang meningkatkan produksi asam lambung berlebih. Hindari stres untuk mencegah peningkatan produksi asam lambung berlebih. Makan sedikit tapi sering.'
     },
     { 
         kode: 'P04', 
         nama: 'Gastroparesis',
-        treatment: '',
+        treatment: {
+            'Mual': saranPenangananGejala.P04['Mual'].saran,
+            'Muntah': saranPenangananGejala.P04['Muntah'].saran,
+            'Perut kembung': saranPenangananGejala.P04['Perut kembung'].saran,
+            'Cepat merasa kenyang': saranPenangananGejala.P04['Cepat merasa kenyang'].saran,
+            'Nyeri pada ulu hati': saranPenangananGejala.P04['Nyeri pada ulu hati'].saran,
+            'Tidak nafsu makan': saranPenangananGejala.P04['Tidak nafsu makan'].saran,
+            'Sulit menelan': saranPenangananGejala.P04['Sulit menelan'].saran,
+            'Kenyang dalam waktu yang lama setelah makan': saranPenangananGejala.P04['Kenyang dalam waktu yang lama setelah makan'].saran,
+            'Kondisi tubuh lemah': saranPenangananGejala.P04['Kondisi tubuh lemah'].saran,
+            'Nyeri pada perut': saranPenangananGejala.P04['Nyeri pada perut'].saran,
+            'Mulas': saranPenangananGejala.P04['Mulas'].saran,
+            'Cegukan': saranPenangananGejala.P04['Cegukan'].saran,
+            'BAB dengan tinja berwarna hitam atau berdarah': saranPenangananGejala.P04['BAB dengan tinja berwarna hitam atau berdarah'].saran,
+            'Anemia': saranPenangananGejala.P04['Anemia'].saran
+        },
         prevention: 'Jika mengidap diabetes, pastikan kadar glukosa terkontrol dengan baik. Pahami kemungkinan efek samping dari perawatan yang sedang dijalani dan ketahui apa yang harus dilakukan jika terjadi efek samping. Berkonsultasi dengan dokter sebelum mengkonsumsi obat-obatan.'
     },
     { 
         kode: 'P05', 
         nama: 'Gastroenteritis',
-        treatment:'',
+        treatment: {
+            'Mual': saranPenangananGejala.P05['Mual'].saran,
+            'Muntah': saranPenangananGejala.P05['Muntah'].saran,
+            'Tidak nafsu makan': saranPenangananGejala.P05['Tidak nafsu makan'].saran,
+            'Sering diare': saranPenangananGejala.P05['Sering diare'].saran,
+            'Nyeri pada perut': saranPenangananGejala.P05['Nyeri pada perut'].saran,
+            'Keram perut': saranPenangananGejala.P05['Keram perut'].saran,
+            'Rasa pahit atau asam di mulut': saranPenangananGejala.P05['Rasa pahit atau asam di mulut'].saran
+        },
         prevention: 'Pemberian imunisasi rotavirus lengkap. Menjaga kebersihan. Mencuci tangan dengan sabun dan di air mengalir. Pastikan makanan telah diolah menggunakan peralatan masak yang bersih dan steril. Hindari menggunakan barang pribadi bersamaan, seperti alat makan dan handuk. Hindari mengonsumsi makanan mentah. Jaga jarak dengan penderita gastroenteritis.'
     },
     { 
         kode: 'P06',
         nama: 'Polip Lambung',
-        treatment: '',
+        treatment: {
+            'Mual': saranPenangananGejala.P06['Mual'].saran,
+            'Muntah': saranPenangananGejala.P06['Muntah'].saran,
+            'Nyeri pada perut': saranPenangananGejala.P06['Nyeri pada perut'].saran,
+            'Memiliki riwayat penyakit keluarga yang serius': saranPenangananGejala.P06['Memiliki riwayat penyakit keluarga yang serius'].saran
+        },
         prevention: 'Menjaga kebersihan tangan. Menjaga kebersihan makanan. Berkonsultasi dengan dokter dalam pemilihan obat-obatan.'
     },
     { 
         kode: 'P07', 
         nama: 'Tukak Lambung',
-        treatment: '',
+        treatment: {
+            'Mual': saranPenangananGejala.P07['Mual'].saran,
+            'Muntah': saranPenangananGejala.P07['Muntah'].saran,
+            'Perut kembung': saranPenangananGejala.P07['Perut kembung'].saran,
+            'Cepat merasa kenyang': saranPenangananGejala.P07['Cepat merasa kenyang'].saran,
+            'Nyeri pada ulu hati': saranPenangananGejala.P07['Nyeri pada ulu hati'].saran,
+            'Tidak nafsu makan': saranPenangananGejala.P07['Tidak nafsu makan'].saran,
+            'Diare': saranPenangananGejala.P07['Diare'].saran,
+            'Kelelahan': saranPenangananGejala.P07['Kelelahan'].saran
+        },
         prevention: 'Mencegah peningkatan produksi asam lambung berlebih, seperti menjaga pola makan, hindari stres, menghindari minuman beralkohol, bersoda, berkafein, berhenti/ tidak merokok. Berkonsultasi dengan dokter terkait obat yang akan dikonsumsi.'
     },
     { 
         kode: 'P08', 
         nama: 'Kanker Lambung',
-        treatment: '',
-        prevention: '"Menghindari atau menghentikan kebiasaan merokok dan mengonsumsi alkohol. Menghindari makanan yang diasap, olahan, cepat saji/makanan instan. Mengurangi konsumsi garam sesuai kebutuhan harian. Menerapkan pola makan sehat. Berolahraga secara teratur untuk menjaga berat badan.'
+        treatment: {
+            // Misalkan belum ada saran khusus untuk setiap gejala, bisa diisi sesuai kebutuhan
+        },
+        prevention: 'Menghindari atau menghentikan kebiasaan merokok dan mengonsumsi alkohol. Menghindari makanan yang diasap, olahan, cepat saji/makanan instan. Mengurangi konsumsi garam sesuai kebutuhan harian. Menerapkan pola makan sehat. Berolahraga secara teratur untuk menjaga berat badan.'
     }
 ];
 
@@ -265,7 +427,6 @@ const cfPakarData = {
         G31: { mb: 1, md: 0.2, cf: 0.8 }
     }
 }
-
 
 function populateSelectedGejalaTable() {
     const table = document.getElementById('selectedGejalaTable').getElementsByTagName('tbody')[0];
@@ -438,9 +599,11 @@ document.getElementById('submitJawabanBtn').addEventListener('click', () => {
     const openPopupBtn = document.getElementById('btnLihatHasil');
     const closeBtn = document.querySelector('.close');
     
-
+    
     closeBtn.addEventListener('click', () => {
         popup.style.display = "none";
+        const treatmentList = document.getElementById('treatmentAdvice');
+        treatmentList.innerHTML = null;
     });
 
     window.addEventListener('click', (event) => {
@@ -453,11 +616,29 @@ document.getElementById('submitJawabanBtn').addEventListener('click', () => {
         if (disease) {
             const cfPercentage = (cf * 100).toFixed(0) + "%";
             const diagnosis = `Anda memiliki diagnosis awal Penyakit ${disease.nama} berdasarkan hasil perhitungan dengan nilai tertinggi yaitu ${cfPercentage}.`;
-            const prevention = disease.prevention;
             const treatment = disease.treatment;
+            const prevention = disease.prevention;
+            console.log(treatment);
+            const symptom = JSON.parse(localStorage.getItem('selectedGejala')) || [];
     
             document.getElementById('diagnosisResult').innerText = diagnosis;
-            document.getElementById('treatmentAdvice').innerText = treatment;
+            let symptomTreatment = [];
+            if (symptomTreatment.length === 0) {
+                symptomTreatment = symptom.map(item => ({
+                    kode: item.kode,
+                    nama: item.nama,
+                    treatment: treatment[item.nama] || 'No treatment available'
+                }));
+            }
+            const treatmentList = document.getElementById('treatmentAdvice');
+            console.log(symptomTreatment);
+            symptomTreatment.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.className = 'treatment-item';
+                listItem.innerHTML = `<span class="symptom">${item.nama} (${item.kode}):</span> ${item.treatment}`;
+                treatmentList.appendChild(listItem);
+            });
+
             document.getElementById('preventionAdvice').innerText = prevention;
         } else {
             console.error('Tidak ada penyakit yang terdiagnosis.');

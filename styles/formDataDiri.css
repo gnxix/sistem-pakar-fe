@@ -406,26 +406,30 @@ footer ul li {
     }
 
     header {
-        left: 165.10px;
+        left: 185px;
+    }
+
+    header > h1 {
+        font-size: 20px;
     }
 
     /* Style untuk Side Menu */
     .sideMenu li {
         padding: 10px 10px 10px 20px;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .menu-item {
-        width: 115px;
+        width: 135px;
     }
     
     .namaApk li {
-        font-size: 18px;
+        font-size: 20px;
         padding: 25px 10px 25px 0px;
     }
 
     .custom-hr {
-        width: 130px;
+        width: 150px;
     }
 
     /* Style untuk Main */
@@ -436,7 +440,7 @@ footer ul li {
     h2 {
         text-align: left;
         color: #333333;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .form-group {
@@ -452,7 +456,7 @@ footer ul li {
         padding: 10px;
         width: 100%;
         box-sizing: border-box;
-        font-size: 12px;
+        font-size: 12.5px;
         font-weight: 600;
     }
 
@@ -461,7 +465,7 @@ footer ul li {
     }
 
     label {
-        font-size: 12px;
+        font-size: 12.5px;
         padding-right: 10px;
         align-self: center;
         text-wrap: nowrap;
@@ -469,7 +473,7 @@ footer ul li {
     
     #jenis_kelamin {
         font-family: "Nunito", "sans-serif";
-        font-size: 12px;
+        font-size: 12.5px;
         border-radius: 20px;
         padding: 5px;
         width: 100%;
@@ -487,7 +491,7 @@ footer ul li {
         border-radius: 20px;
         color: white;
         padding: 6px;
-        font-size: 12px;
+        font-size: 12.5px;
         width: 90px;
         cursor: pointer;
     }

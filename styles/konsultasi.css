@@ -133,7 +133,6 @@ aside {
 }
 
 /* Style untuk main */
-
 main {
     display: flex;
     flex-direction: column;
@@ -161,6 +160,7 @@ h2 {
     font-size: 10px;
     line-height: 20px;
     margin: 0px 0px 20px 0px;
+    font-weight: 500;
 }
 
 img {
@@ -378,39 +378,48 @@ footer ul li {
 @media (min-width: 667px) {
     /* Style untuk Header */
     header {
-        left: 165px;
+        left: 185px;
+    }
+
+    header > h1 {
+        font-size: 20px;
     }
     
     /* Style untuk Side Menu */
     .sideMenu li {
         padding: 10px 10px 10px 20px;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .menu-item {
-        width: 115px;
+        width: 135px;
     }
     
     .namaApk li {
-        font-size: 18px;
+        font-size: 20px;
         padding: 25px 10px 25px 0px;
     }
 
     .custom-hr {
-        width: 130px;
+        width: 150px;
     }
 
     /* Style untuk Main */
     h2 {
-        font-size: 16px; 
+        font-size: 18px; 
     }
 
     .isi-main2 > div > img {
         width: 200px;
     }
 
+    .main-body p {
+        font-size: 12.5px;
+        
+    }
+
     .submit {
-        font-size: 11px;
+        font-size: 12px;
     }
     
     

@@ -431,39 +431,52 @@ footer ul li {
 @media (min-width: 667px) {
     /* Style untuk Header */
     header {
-        left: 165.10px;
+        left: 185px;
+    }
+
+    header > h1 {
+        font-size: 20px;
     }
 
     /* Style untuk Side Menu */
     .sideMenu li {
         padding: 10px 10px 10px 20px;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .menu-item {
-        width: 115px;
+        width: 135px;
     }
     
     .namaApk li {
-        font-size: 18px;
+        font-size: 20px;
         padding: 25px 10px 25px 0px;
     }
 
     .custom-hr {
-        width: 130px;
+        width: 150px;
     }
 
     /* Style untuk Main */
+    .container p {
+        font-size: 12.5px;
+    }
+
+    th, td {
+        font-size: 12.5px;
+    }
+
+
     .pagination {
         gap: 55px;
     }
 
     #next {
-        padding-right: 10px;
+        padding-right: 4px;
     }
 
     #btnKirim {
-        font-size: 11px;
+        font-size: 12.5px;
         width: 85px;
     }
 
