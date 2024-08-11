@@ -17,10 +17,6 @@ document.getElementById('btnKeFormDataDiri').addEventListener('click', function(
     window.location.href = "formDataDiri.html";
 });
 
-document.getElementById('btnKeRiwayatKonsultasi').addEventListener('click', function() {
-    window.location.href = "riwayatKonsultasi.html";
-});
-
 document.addEventListener("DOMContentLoaded", function() {
     let dataDiriSubmitted = false;
 
@@ -49,10 +45,6 @@ document.getElementById('btnKeKonsultasi2').addEventListener('click', function()
 
 document.getElementById('btnKeFormDataDiri2').addEventListener('click', function() {
     window.location.href = "formDataDiri.html";
-});
-
-document.getElementById('btnKeRiwayatKonsultasi2').addEventListener('click', function() {
-    window.location.href = "riwayatKonsultasi.html";
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -111,7 +103,7 @@ const selectedGejala = [];
 
 function populateGejalaTable() {
     const table = document.getElementById('tabelDataGejala').getElementsByTagName('tbody')[0];
-    table.innerHTML = ''; // Clear previous content
+    table.innerHTML = '';
 
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -144,6 +136,7 @@ function prevPage() {
     if (currentPage > 1) {
         currentPage--;
         populateGejalaTable();
+        console.log("Current Page (prev):", currentPage);
     }
 }
 
@@ -151,6 +144,7 @@ function nextPage() {
     if (currentPage < Math.ceil(gejalaData.length / itemsPerPage)) {
         currentPage++;
         populateGejalaTable();
+        console.log("Current Page (next):", currentPage);
     }
 }
 
@@ -174,6 +168,7 @@ document.getElementById('prev').addEventListener('click', prevPage);
 document.getElementById('next').addEventListener('click', nextPage);
 
 document.addEventListener('DOMContentLoaded', populateGejalaTable);
+
 
 
 

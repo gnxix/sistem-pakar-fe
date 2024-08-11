@@ -185,7 +185,7 @@ nav {
 .vector1 {
     position: absolute;
     width: 90px;
-    top: 155px;
+    top: 160px;
     left: 0%;
 }
 
@@ -371,11 +371,11 @@ footer {
 }
 
 footer h3 {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 footer p {
-    font-size: 10px;
+    font-size: 9px;
     margin: auto;
     font-weight: 100;
 }
@@ -453,13 +453,12 @@ footer ul li {
     .vector1 {
         position: absolute;
         width: 95px;
-        top: 171px;
+        top: 180px;
     }
     
     .vector2 {
         top: 55px;
     }
-
 
     /* Style untuk Tentang SIPAKAR */
     .ttgSIPAKAR {
@@ -513,6 +512,14 @@ footer ul li {
     /* Style untuk Footer */
     footer {
         padding: 40px 40px 20px;
+    }
+    
+    footer h3 {
+        font-size: 13px;
+    }
+
+    footer p {
+        font-size: 10px;
     }
 }
 
@@ -781,7 +788,7 @@ footer ul li {
     }
 
     .beranda p {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     #btnKonsultasi2 {
@@ -799,6 +806,10 @@ footer ul li {
     /* Style untuk Tentang SIPAKAR */
     .ttgSIPAKAR {
         padding: 40px 70px 0px;
+    }
+
+    .ttgSIPAKAR div {
+        padding: 40px;
     }
 
     .ttgSIPAKAR p {

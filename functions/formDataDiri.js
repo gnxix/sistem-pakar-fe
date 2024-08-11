@@ -23,9 +23,6 @@ document.getElementById('btnKeFormDataDiri').addEventListener('click', function(
     window.location.href = "formDataDiri.html";
 });
 
-document.getElementById('btnKeRiwayatKonsultasi').addEventListener('click', function() {
-    window.location.href = "riwayatKonsultasi.html";
-});
 
 document.addEventListener("DOMContentLoaded", function() {
     let dataDiriSubmitted = false;
@@ -73,9 +70,6 @@ document.getElementById('btnKeFormDataDiri2').addEventListener('click', function
     window.location.href = "formDataDiri.html";
 });
 
-document.getElementById('btnKeRiwayatKonsultasi2').addEventListener('click', function() {
-    window.location.href = "riwayatKonsultasi.html";
-});
 
 document.addEventListener("DOMContentLoaded", function() {
     let dataDiriSubmitted = false;
