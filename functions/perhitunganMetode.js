@@ -13,10 +13,6 @@ document.getElementById('btnKeKonsultasi').addEventListener('click', function() 
     window.location.href = "Konsultasi.html";
 });
 
-document.getElementById('btnKeFormDataDiri').addEventListener('click', function() {
-    window.location.href = "formDataDiri.html";
-});
-
 document.getElementById('btnKeFormDataGejala').addEventListener('click', function() {
     window.location.href = "formDataGejala.html";
 });
@@ -49,10 +45,6 @@ document.getElementById('btnKeKonsultasi2').addEventListener('click', function()
     window.location.href = "Konsultasi.html";
 });
 
-document.getElementById('btnKeFormDataDiri2').addEventListener('click', function() {
-    window.location.href = "formDataDiri.html";
-});
-
 document.getElementById('btnKeFormDataGejala2').addEventListener('click', function() {
     window.location.href = "formDataGejala.html";
 });
@@ -72,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Function to display a warning when the user attempts to reload the page
+
 window.addEventListener('beforeunload', function (e) {
     // Custom message is deprecated, but this triggers the confirmation dialog
     const confirmationMessage = 'Perubahan yang Anda buat mungkin tidak akan disimpan. Apakah Anda yakin ingin meninggalkan halaman ini?';
@@ -90,6 +82,144 @@ const jawabanOptions = {
     'Cukup Yakin': 0.6,
     'Yakin': 0.8,
     'Sangat Yakin': 1
+};
+
+//SARAN PENANGANAN GEJALA
+const saranPenangananGejala = {
+    P01: {
+        'Mual': { saran: 'Cobalah minum teh jahe hangat atau makan camilan ringan seperti biskuit.' },
+        'Muntah': { saran: 'Minumlah air secara perlahan dan hindari makan makanan berat atau berminyak.' },
+        'Perut kembung': { saran: 'Hindari minuman bersoda dan makan dalam porsi kecil namun sering.' },
+        'Cepat merasa kenyang': { saran: 'Makanlah dengan porsi kecil lebih sering dan hindari makan terlalu cepat.' },
+        'Nyeri pada ulu hati': { saran: 'Hindari makanan pedas, asam, dan minuman berkafein. Cobalah mengonsumsi makanan yang lembut.' },
+        'Tidak nafsu makan': { saran: 'Konsumsi makanan yang ringan dan mudah dicerna seperti sup kaldu atau buah-buahan.' },
+        'Penurunan berat badan tanpa alasan yang jelas': { saran: 'Periksakan diri ke dokter untuk evaluasi lebih lanjut dan konsultasikan dengan ahli gizi.' },
+        'Anemia': { saran: 'Konsumsi makanan tinggi zat besi seperti daging merah, hati, dan sayuran hijau. Pertimbangkan suplemen zat besi jika diperlukan.' }
+    },
+    P02: {
+        'Mual': { saran: 'Hindari makanan berlemak dan berminyak, serta cobalah minum air jahe.' },
+        'Muntah': { saran: 'Minumlah air dalam tegukan kecil dan istirahatlah dalam posisi duduk.' },
+        'Perut kembung': { saran: 'Hindari makanan yang memproduksi gas, seperti kacang-kacangan dan minuman bersoda.' },
+        'Cepat merasa kenyang': { saran: 'Makanlah dalam porsi kecil dan hindari makanan yang berlemak.' },
+        'Nyeri pada ulu hati': { saran: 'Hindari makanan pedas dan asam. Konsumsi susu atau makanan yang dapat menetralkan asam.' },
+        'Tidak nafsu makan': { saran: 'Makanlah makanan yang mudah dicerna dan berkalori tinggi untuk membantu meningkatkan nafsu makan.' },
+        'Perut terasa panas': { saran: 'Hindari makanan pedas, dan konsumsi makanan dingin atau netral.' },
+        'Penurunan berat badan tanpa alasan yang jelas': { saran: 'Segera konsultasikan dengan dokter untuk pemeriksaan lebih lanjut.' },
+        'Kondisi tubuh lemah': { saran: 'Konsumsi makanan yang bergizi dan pastikan mendapatkan cukup istirahat.' },
+        'Nyeri pada perut': { saran: 'Hindari makanan yang dapat memicu nyeri dan gunakan kompres hangat pada perut.' },
+        'Mulas': { saran: 'Hindari makanan pedas dan asam, serta cobalah minum air putih atau susu untuk meredakan mulas.' },
+        'Cegukan': { saran: 'Minum air dingin secara perlahan atau menahan napas selama beberapa detik.' },
+        'BAB dengan tinja berwarna hitam atau berdarah': { saran: 'Segera konsultasi dengan dokter untuk evaluasi lebih lanjut.' },
+        'Anemia': { saran: 'Konsumsi makanan kaya zat besi dan pertimbangkan suplemen jika diperlukan. Konsultasikan dengan dokter untuk pemeriksaan lebih lanjut.' },
+        'Memiliki riwayat penyakit keluarga yang serius': { saran: 'Lakukan pemeriksaan kesehatan secara rutin dan konsultasikan dengan dokter untuk evaluasi.' }
+    },
+    P03: {
+        'Mual': { saran: 'Minum air jahe hangat atau teh herbal, dan makan makanan ringan yang mudah dicerna.' },
+        'Muntah': { saran: 'Minum air putih dalam tegukan kecil dan hindari makanan berat.' },
+        'Rasa terbakar di tenggorokan': { saran: 'Hindari makanan pedas dan asam, serta cobalah minum susu atau air dingin.' },
+        'Sulit menelan': { saran: 'Konsumsi makanan lunak dan cair seperti sup atau yogurt.' },
+        'Dada terasa panas': { saran: 'Hindari berbaring setelah makan dan konsumsi makanan yang tidak mengiritasi lambung.' },
+        'Naiknya makanan atau cairan asam dari lambung ke mulut': { saran: 'Tidurkan kepala lebih tinggi dan hindari makanan pemicu seperti makanan pedas.' },
+        'Sulit menarik napas': { saran: 'Hindari aktivitas berat dan konsultasikan dengan dokter jika gejala berlanjut.' },
+        'Radang tenggorokan': { saran: 'Berkumur dengan air garam hangat dan minum teh hangat.' },
+        'Rasa pahit atau asam di mulut': { saran: 'Konsumsi permen karet bebas gula atau bilas mulut dengan air bersih.' },
+        'Suara serak': { saran: 'Istirahatkan suara dan hindari berbicara keras atau panjang.' },
+        'Kerusakan gigi karena terkena asam lambung': { saran: 'Bilas mulut dengan air setelah muntah dan konsultasikan dengan dokter gigi.' },
+        'Bau mulut': { saran: 'Sikat gigi secara teratur, gunakan benang gigi, dan bilas mulut dengan obat kumur.' }
+    },
+    P04: {
+        'Mual': { saran: 'Hindari makanan berat dan berminyak, dan cobalah minum air jahe.' },
+        'Muntah': { saran: 'Minum cairan dalam tegukan kecil dan hindari makanan padat.' },
+        'Perut kembung': { saran: 'Hindari makanan yang menghasilkan gas dan minuman bersoda.' },
+        'Cepat merasa kenyang': { saran: 'Makan dalam porsi kecil dan sering, serta hindari makanan berlemak.' },
+        'Nyeri pada ulu hati': { saran: 'Hindari makanan pedas dan asam. Cobalah makanan yang lembut seperti oatmeal.' },
+        'Tidak nafsu makan': { saran: 'Konsumsi makanan ringan dan bernutrisi, dan pertimbangkan suplemen jika diperlukan.' },
+        'Sulit menelan': { saran: 'Konsumsi makanan lunak dan hindari makanan keras atau kasar.' },
+        'Kenyang dalam waktu yang lama setelah makan': { saran: 'Makan dalam porsi kecil dan hindari makanan berat.' },
+        'Kondisi tubuh lemah': { saran: 'Konsumsi makanan bergizi dan pastikan mendapatkan istirahat yang cukup.' },
+        'Nyeri pada perut': { saran: 'Hindari makanan yang memicu nyeri dan gunakan kompres hangat jika diperlukan.' },
+        'Mulas': { saran: 'Hindari makanan pedas dan asam, serta minum air putih untuk meredakan mulas.' },
+        'Cegukan': { saran: 'Minum air dingin perlahan atau menahan napas.' },
+        'BAB dengan tinja berwarna hitam atau berdarah': { saran: 'Segera konsultasikan dengan dokter.' },
+        'Anemia': { saran: 'Konsumsi makanan kaya zat besi dan pertimbangkan suplemen jika diperlukan.' }
+    },
+    P05: {
+        'Mual': { saran: 'Minum air hangat dengan sedikit madu atau makan camilan ringan.' },
+        'Muntah': { saran: 'Minum air dalam tegukan kecil dan hindari makanan berat.' },
+        'Tidak nafsu makan': { saran: 'Makanlah dalam porsi kecil namun sering dan pilih makanan yang mudah dicerna.' },
+        'Sering diare': { saran: 'Minum banyak cairan untuk mencegah dehidrasi dan hindari makanan yang dapat memperburuk diare.' },
+        'Nyeri pada perut': { saran: 'Hindari makanan pedas dan asam, serta gunakan kompres hangat pada perut.' },
+        'Keram perut': { saran: 'Konsumsi makanan yang lembut dan hindari makanan yang mengandung gas.' },
+        'Rasa pahit atau asam di mulut': { saran: 'Bilas mulut dengan air bersih atau gunakan permen karet bebas gula.' }
+    },
+    P06: {
+        'Mual': { saran: 'Minum teh jahe atau camilan ringan untuk meredakan mual.' },
+        'Muntah': { saran: 'Minum air perlahan dan makan makanan yang mudah dicerna.' },
+        'Nyeri pada perut': { saran: 'Hindari makanan yang mengiritasi perut dan gunakan kompres hangat.' },
+        'Memiliki riwayat penyakit keluarga yang serius': { saran: 'Lakukan pemeriksaan rutin dan konsultasikan dengan dokter.' }
+    },
+    P07: {
+        'Mual': { saran: 'Minum air jahe atau makan makanan ringan seperti biskuit.' },
+        'Muntah': { saran: 'Minum air dalam tegukan kecil dan hindari makanan berat.' },
+        'Perut kembung': { saran: 'Hindari makanan yang menghasilkan gas dan makan dalam porsi kecil.' },
+        'Cepat merasa kenyang': { saran: 'Makan dalam porsi kecil dan hindari makanan yang berat.' },
+        'Nyeri pada ulu hati': { saran: 'Hindari makanan pedas dan asam serta cobalah makanan lembut.' },
+        'Tidak nafsu makan': { saran: 'Konsumsi makanan ringan dan bernutrisi.' },
+        'Diare': { saran: 'Minum banyak cairan untuk mencegah dehidrasi dan hindari makanan yang memicu diare.' },
+        'Kelelahan': { saran: 'Istirahat yang cukup dan konsumsi makanan bergizi.' }
+    },
+    P08: {
+        'Mual': { saran:'Minum air jahe atau makan makanan ringan seperti biskuit.' },
+        'Muntah': { saran:'Minum air dalam tegukan kecil dan hindari makanan berat.' },
+        'Perut kembung': { saran:'Hindari makanan yang menghasilkan gas dan makan dalam porsi kecil' },
+        'Cepat merasa kenyang': { saran:'Makan dalam porsi kecil dan hindari makanan yang berat' },
+        'Nyeri pada ulu hati': { saran:'Hindari makanan pedas dan asam serta cobalah makanan lembut.' },
+        'Tidak nafsu makan': { saran:'Konsumsi makanan ringan dan bernutrisi.' },
+        'Penurunan berat badan tanpa alasan yang jelas': { saran:'Segera konsultasikan dengan dokter untuk pemeriksaan lebih lanjut.' },
+        'Dada terasa panas': { saran:'Hindari berbaring setelah makan dan konsumsi makanan yang tidak mengiritasi lambung.' },
+        'Kondisi tubuh lemah': { saran:'Konsumsi makanan bergizi dan pastikan mendapatkan istirahat yang cukup.' },
+        'Nyeri pada perut': { saran:'Hindari makanan yang mengiritasi perut dan gunakan kompres hangat.' },
+        'Mulas': { saran:'Hindari makanan pedas dan asam, serta minum air putih untuk meredakan mulas.' },
+        'BAB dengan tinja berwarna hitam atau berdarah': { saran:'Segera konsultasi dengan dokter untuk evaluasi lebih lanjut.' },
+        'Muntah darah': { saran:'Segera cari bantuan medis dengan menghubungi layanan darurat atau pergi ke rumah sakit terdekat.' },
+        'Anemia': { saran:'Konsumsi makanan kaya zat besi dan pertimbangkan suplemen jika diperlukan.' },
+        'Pembengkakan pada perut': { saran:'Dapat diredakan dengan kompres dingin, namun tetap memerlukan penanganan medis segera' },
+        'Memiliki riwayat penyakit keluarga yang serius (penyakit lambung, diabetes, kanker, dsb.)': { saran:'Lakukan pemeriksaan rutin dan konsultasikan dengan dokter.' },
+    }
+};
+
+const penangananGejalaUmum = {
+    G01: 'Minum air jahe, makan porsi kecil sering, hindari makanan berlemak.',
+    G02: 'Minum cairan sedikit demi sedikit, makan makanan mudah dicerna.',
+    G03: 'Hindari makanan berlemak, minum teh peppermint, olahraga ringan.',
+    G04: 'Makan porsi kecil sering, hindari makanan berat sebelum tidur.',
+    G05: 'Hindari makanan pedas dan berlemak, minum antasida.',
+    G06: 'Makan porsi kecil sering, coba makanan favorit, minum jus segar.',
+    G07: 'Hindari makanan asam, pedas, dan berlemak.',
+    G08: 'Minum antasida, hindari makanan pedas dan berlemak.',
+    G09: 'Konsultasi dengan dokter, cek kondisi medis.',
+    G10: 'Makan makanan lembut, minum air hangat, konsultasi dokter.',
+    G11: 'Hindari makanan pedas, makan porsi kecil, tidak berbaring setelah makan.',
+    G12: 'Hindari makan sebelum tidur, tidur dengan bantal tinggi.',
+    G13: 'Makan porsi kecil sering, hindari makanan berat.',
+    G14: 'Istirahat cukup, makan makanan bergizi, minum vitamin.',
+    G15: 'Minum banyak cairan, makan makanan rendah serat, hindari produk susu.',
+    G16: 'Hindari makanan pedas, minum air hangat, konsultasi dokter.',
+    G17: 'Hindari makanan pedas dan asam, minum antasida.',
+    G18: 'Istirahat, hindari aktivitas berat, konsultasi dokter.',
+    G19: 'Minum air dingin perlahan, tahan napas beberapa detik.',
+    G20: 'Segera konsultasi dokter, cek kondisi medis.',
+    G21: 'Segera konsultasi dokter, hindari makan berat.',
+    G22: 'Minum banyak cairan, istirahat, minum obat penurun demam.',
+    G23: 'Minum air hangat, kompres hangat, hindari makanan berlemak.',
+    G24: 'Minum air hangat, kumur air garam, hindari makanan asam.',
+    G25: 'Konsumsi makanan tinggi zat besi, minum suplemen zat besi.',
+    G26: 'Hindari makanan pedas dan asam, minum air putih.',
+    G27: 'Istirahatkan suara, minum air hangat, hindari merokok.',
+    G28: 'Sikat gigi secara teratur, hindari makanan asam.',
+    G29: 'Sikat gigi dua kali sehari, minum air putih, hindari makanan berbau.',
+    G30: 'Hindari makanan berlemak dan gas, minum air putih.',
+    G31: 'Konsultasi dengan dokter secara rutin, lakukan pemeriksaan kesehatan berkala.'
 };
 
 // ATURAN FORWARD CHAINING
@@ -270,144 +400,6 @@ const gejalaData = {
 };
 
 
-//SARAN PENANGANAN GEJALA
-const saranPenangananGejala = {
-    P01: {
-        'Mual': { saran: 'Cobalah minum teh jahe hangat atau makan camilan ringan seperti biskuit.' },
-        'Muntah': { saran: 'Minumlah air secara perlahan dan hindari makan makanan berat atau berminyak.' },
-        'Perut kembung': { saran: 'Hindari minuman bersoda dan makan dalam porsi kecil namun sering.' },
-        'Cepat merasa kenyang': { saran: 'Makanlah dengan porsi kecil lebih sering dan hindari makan terlalu cepat.' },
-        'Nyeri pada ulu hati': { saran: 'Hindari makanan pedas, asam, dan minuman berkafein. Cobalah mengonsumsi makanan yang lembut.' },
-        'Tidak nafsu makan': { saran: 'Konsumsi makanan yang ringan dan mudah dicerna seperti sup kaldu atau buah-buahan.' },
-        'Penurunan berat badan tanpa alasan yang jelas': { saran: 'Periksakan diri ke dokter untuk evaluasi lebih lanjut dan konsultasikan dengan ahli gizi.' },
-        'Anemia': { saran: 'Konsumsi makanan tinggi zat besi seperti daging merah, hati, dan sayuran hijau. Pertimbangkan suplemen zat besi jika diperlukan.' }
-    },
-    P02: {
-        'Mual': { saran: 'Hindari makanan berlemak dan berminyak, serta cobalah minum air jahe.' },
-        'Muntah': { saran: 'Minumlah air dalam tegukan kecil dan istirahatlah dalam posisi duduk.' },
-        'Perut kembung': { saran: 'Hindari makanan yang memproduksi gas, seperti kacang-kacangan dan minuman bersoda.' },
-        'Cepat merasa kenyang': { saran: 'Makanlah dalam porsi kecil dan hindari makanan yang berlemak.' },
-        'Nyeri pada ulu hati': { saran: 'Hindari makanan pedas dan asam. Konsumsi susu atau makanan yang dapat menetralkan asam.' },
-        'Tidak nafsu makan': { saran: 'Makanlah makanan yang mudah dicerna dan berkalori tinggi untuk membantu meningkatkan nafsu makan.' },
-        'Perut terasa panas': { saran: 'Hindari makanan pedas, dan konsumsi makanan dingin atau netral.' },
-        'Penurunan berat badan tanpa alasan yang jelas': { saran: 'Segera konsultasikan dengan dokter untuk pemeriksaan lebih lanjut.' },
-        'Kondisi tubuh lemah': { saran: 'Konsumsi makanan yang bergizi dan pastikan mendapatkan cukup istirahat.' },
-        'Nyeri pada perut': { saran: 'Hindari makanan yang dapat memicu nyeri dan gunakan kompres hangat pada perut.' },
-        'Mulas': { saran: 'Hindari makanan pedas dan asam, serta cobalah minum air putih atau susu untuk meredakan mulas.' },
-        'Cegukan': { saran: 'Minum air dingin secara perlahan atau menahan napas selama beberapa detik.' },
-        'BAB dengan tinja berwarna hitam atau berdarah': { saran: 'Segera konsultasi dengan dokter untuk evaluasi lebih lanjut.' },
-        'Anemia': { saran: 'Konsumsi makanan kaya zat besi dan pertimbangkan suplemen jika diperlukan. Konsultasikan dengan dokter untuk pemeriksaan lebih lanjut.' },
-        'Memiliki riwayat penyakit keluarga yang serius': { saran: 'Lakukan pemeriksaan kesehatan secara rutin dan konsultasikan dengan dokter untuk evaluasi.' }
-    },
-    P03: {
-        'Mual': { saran: 'Minum air jahe hangat atau teh herbal, dan makan makanan ringan yang mudah dicerna.' },
-        'Muntah': { saran: 'Minum air putih dalam tegukan kecil dan hindari makanan berat.' },
-        'Rasa terbakar di tenggorokan': { saran: 'Hindari makanan pedas dan asam, serta cobalah minum susu atau air dingin.' },
-        'Sulit menelan': { saran: 'Konsumsi makanan lunak dan cair seperti sup atau yogurt.' },
-        'Dada terasa panas': { saran: 'Hindari berbaring setelah makan dan konsumsi makanan yang tidak mengiritasi lambung.' },
-        'Naiknya makanan atau cairan asam dari lambung ke mulut': { saran: 'Tidurkan kepala lebih tinggi dan hindari makanan pemicu seperti makanan pedas.' },
-        'Sulit menarik napas': { saran: 'Hindari aktivitas berat dan konsultasikan dengan dokter jika gejala berlanjut.' },
-        'Radang tenggorokan': { saran: 'Berkumur dengan air garam hangat dan minum teh hangat.' },
-        'Rasa pahit atau asam di mulut': { saran: 'Konsumsi permen karet bebas gula atau bilas mulut dengan air bersih.' },
-        'Suara serak': { saran: 'Istirahatkan suara dan hindari berbicara keras atau panjang.' },
-        'Kerusakan gigi karena terkena asam lambung': { saran: 'Bilas mulut dengan air setelah muntah dan konsultasikan dengan dokter gigi.' },
-        'Bau mulut': { saran: 'Sikat gigi secara teratur, gunakan benang gigi, dan bilas mulut dengan obat kumur.' }
-    },
-    P04: {
-        'Mual': { saran: 'Hindari makanan berat dan berminyak, dan cobalah minum air jahe.' },
-        'Muntah': { saran: 'Minum cairan dalam tegukan kecil dan hindari makanan padat.' },
-        'Perut kembung': { saran: 'Hindari makanan yang menghasilkan gas dan minuman bersoda.' },
-        'Cepat merasa kenyang': { saran: 'Makan dalam porsi kecil dan sering, serta hindari makanan berlemak.' },
-        'Nyeri pada ulu hati': { saran: 'Hindari makanan pedas dan asam. Cobalah makanan yang lembut seperti oatmeal.' },
-        'Tidak nafsu makan': { saran: 'Konsumsi makanan ringan dan bernutrisi, dan pertimbangkan suplemen jika diperlukan.' },
-        'Sulit menelan': { saran: 'Konsumsi makanan lunak dan hindari makanan keras atau kasar.' },
-        'Kenyang dalam waktu yang lama setelah makan': { saran: 'Makan dalam porsi kecil dan hindari makanan berat.' },
-        'Kondisi tubuh lemah': { saran: 'Konsumsi makanan bergizi dan pastikan mendapatkan istirahat yang cukup.' },
-        'Nyeri pada perut': { saran: 'Hindari makanan yang memicu nyeri dan gunakan kompres hangat jika diperlukan.' },
-        'Mulas': { saran: 'Hindari makanan pedas dan asam, serta minum air putih untuk meredakan mulas.' },
-        'Cegukan': { saran: 'Minum air dingin perlahan atau menahan napas.' },
-        'BAB dengan tinja berwarna hitam atau berdarah': { saran: 'Segera konsultasikan dengan dokter.' },
-        'Anemia': { saran: 'Konsumsi makanan kaya zat besi dan pertimbangkan suplemen jika diperlukan.' }
-    },
-    P05: {
-        'Mual': { saran: 'Minum air hangat dengan sedikit madu atau makan camilan ringan.' },
-        'Muntah': { saran: 'Minum air dalam tegukan kecil dan hindari makanan berat.' },
-        'Tidak nafsu makan': { saran: 'Makanlah dalam porsi kecil namun sering dan pilih makanan yang mudah dicerna.' },
-        'Sering diare': { saran: 'Minum banyak cairan untuk mencegah dehidrasi dan hindari makanan yang dapat memperburuk diare.' },
-        'Nyeri pada perut': { saran: 'Hindari makanan pedas dan asam, serta gunakan kompres hangat pada perut.' },
-        'Keram perut': { saran: 'Konsumsi makanan yang lembut dan hindari makanan yang mengandung gas.' },
-        'Rasa pahit atau asam di mulut': { saran: 'Bilas mulut dengan air bersih atau gunakan permen karet bebas gula.' }
-    },
-    P06: {
-        'Mual': { saran: 'Minum teh jahe atau camilan ringan untuk meredakan mual.' },
-        'Muntah': { saran: 'Minum air perlahan dan makan makanan yang mudah dicerna.' },
-        'Nyeri pada perut': { saran: 'Hindari makanan yang mengiritasi perut dan gunakan kompres hangat.' },
-        'Memiliki riwayat penyakit keluarga yang serius': { saran: 'Lakukan pemeriksaan rutin dan konsultasikan dengan dokter.' }
-    },
-    P07: {
-        'Mual': { saran: 'Minum air jahe atau makan makanan ringan seperti biskuit.' },
-        'Muntah': { saran: 'Minum air dalam tegukan kecil dan hindari makanan berat.' },
-        'Perut kembung': { saran: 'Hindari makanan yang menghasilkan gas dan makan dalam porsi kecil.' },
-        'Cepat merasa kenyang': { saran: 'Makan dalam porsi kecil dan hindari makanan yang berat.' },
-        'Nyeri pada ulu hati': { saran: 'Hindari makanan pedas dan asam serta cobalah makanan lembut.' },
-        'Tidak nafsu makan': { saran: 'Konsumsi makanan ringan dan bernutrisi.' },
-        'Diare': { saran: 'Minum banyak cairan untuk mencegah dehidrasi dan hindari makanan yang memicu diare.' },
-        'Kelelahan': { saran: 'Istirahat yang cukup dan konsumsi makanan bergizi.' }
-    },
-    P08: {
-        'Mual': { saran:'Minum air jahe atau makan makanan ringan seperti biskuit.' },
-        'Muntah': { saran:'Minum air dalam tegukan kecil dan hindari makanan berat.' },
-        'Perut kembung': { saran:'Hindari makanan yang menghasilkan gas dan makan dalam porsi kecil' },
-        'Cepat merasa kenyang': { saran:'Makan dalam porsi kecil dan hindari makanan yang berat' },
-        'Nyeri pada ulu hati': { saran:'Hindari makanan pedas dan asam serta cobalah makanan lembut.' },
-        'Tidak nafsu makan': { saran:'Konsumsi makanan ringan dan bernutrisi.' },
-        'Penurunan berat badan tanpa alasan yang jelas': { saran:'Segera konsultasikan dengan dokter untuk pemeriksaan lebih lanjut.' },
-        'Dada terasa panas': { saran:'Hindari berbaring setelah makan dan konsumsi makanan yang tidak mengiritasi lambung.' },
-        'Kondisi tubuh lemah': { saran:'Konsumsi makanan bergizi dan pastikan mendapatkan istirahat yang cukup.' },
-        'Nyeri pada perut': { saran:'Hindari makanan yang mengiritasi perut dan gunakan kompres hangat.' },
-        'Mulas': { saran:'Hindari makanan pedas dan asam, serta minum air putih untuk meredakan mulas.' },
-        'BAB dengan tinja berwarna hitam atau berdarah': { saran:'Segera konsultasi dengan dokter untuk evaluasi lebih lanjut.' },
-        'Muntah darah': { saran:'Segera cari bantuan medis dengan menghubungi layanan darurat atau pergi ke rumah sakit terdekat.' },
-        'Anemia': { saran:'Konsumsi makanan kaya zat besi dan pertimbangkan suplemen jika diperlukan.' },
-        'Pembengkakan pada perut': { saran:'Dapat diredakan dengan kompres dingin, namun tetap memerlukan penanganan medis segera' },
-        'Memiliki riwayat penyakit keluarga yang serius (penyakit lambung, diabetes, kanker, dsb.)': { saran:'Lakukan pemeriksaan rutin dan konsultasikan dengan dokter.' },
-    }
-};
-
-const penangananGejalaUmum = {
-    G01: 'Minum air jahe, makan porsi kecil sering, hindari makanan berlemak.',
-    G02: 'Minum cairan sedikit demi sedikit, makan makanan mudah dicerna.',
-    G03: 'Hindari makanan berlemak, minum teh peppermint, olahraga ringan.',
-    G04: 'Makan porsi kecil sering, hindari makanan berat sebelum tidur.',
-    G05: 'Hindari makanan pedas dan berlemak, minum antasida.',
-    G06: 'Makan porsi kecil sering, coba makanan favorit, minum jus segar.',
-    G07: 'Hindari makanan asam, pedas, dan berlemak.',
-    G08: 'Minum antasida, hindari makanan pedas dan berlemak.',
-    G09: 'Konsultasi dengan dokter, cek kondisi medis.',
-    G10: 'Makan makanan lembut, minum air hangat, konsultasi dokter.',
-    G11: 'Hindari makanan pedas, makan porsi kecil, tidak berbaring setelah makan.',
-    G12: 'Hindari makan sebelum tidur, tidur dengan bantal tinggi.',
-    G13: 'Makan porsi kecil sering, hindari makanan berat.',
-    G14: 'Istirahat cukup, makan makanan bergizi, minum vitamin.',
-    G15: 'Minum banyak cairan, makan makanan rendah serat, hindari produk susu.',
-    G16: 'Hindari makanan pedas, minum air hangat, konsultasi dokter.',
-    G17: 'Hindari makanan pedas dan asam, minum antasida.',
-    G18: 'Istirahat, hindari aktivitas berat, konsultasi dokter.',
-    G19: 'Minum air dingin perlahan, tahan napas beberapa detik.',
-    G20: 'Segera konsultasi dokter, cek kondisi medis.',
-    G21: 'Segera konsultasi dokter, hindari makan berat.',
-    G22: 'Minum banyak cairan, istirahat, minum obat penurun demam.',
-    G23: 'Minum air hangat, kompres hangat, hindari makanan berlemak.',
-    G24: 'Minum air hangat, kumur air garam, hindari makanan asam.',
-    G25: 'Konsumsi makanan tinggi zat besi, minum suplemen zat besi.',
-    G26: 'Hindari makanan pedas dan asam, minum air putih.',
-    G27: 'Istirahatkan suara, minum air hangat, hindari merokok.',
-    G28: 'Sikat gigi secara teratur, hindari makanan asam.',
-    G29: 'Sikat gigi dua kali sehari, minum air putih, hindari makanan berbau.',
-    G30: 'Hindari makanan berlemak dan gas, minum air putih.',
-    G31: 'Konsultasi dengan dokter secara rutin, lakukan pemeriksaan kesehatan berkala.'
-};
-
 //Fungsi untuk menampilkan data dari tabel data gejala
 function populateSelectedGejalaTable() {
     const table = document.getElementById('selectedGejalaTable').getElementsByTagName('tbody')[0];
@@ -472,7 +464,6 @@ function forwardChaining() {
     return diagnosisResults;
 }
 
-
 //Fungsi Metode Certainty Factor
 function calculateCF() {
     const tableContainer = document.getElementById('tablesContainer');
@@ -514,6 +505,7 @@ function calculateCF() {
                 matchedGejala.forEach(gejala => {
                     const cfPakar = cfPakarData[penyakit.kode]?.[gejala.kode]?.cf || 0;
                     const cfUserBobot = localStorage.getItem(`CF_${gejala.kode}`) || '0';
+                    selectedGejala.sort((a, b) => a.kode.localeCompare(b.kode));
                     const row = document.createElement('tr');
                     row.innerHTML = `
                         <td>${gejala.kode}</td>

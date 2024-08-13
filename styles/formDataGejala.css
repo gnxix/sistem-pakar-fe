@@ -169,9 +169,25 @@ th {
 
 .pagination {
     display: flex;
-    justify-content: right;
-    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
     margin: 20px 0px;
+}
+
+#kosong {
+    font-family: "Nunito", "sans-serif";
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 0px 5px;
+    font-size: 8px;
+    width: 50px;
+    cursor: pointer;
+}
+
+#paginationInfo {
+    text-wrap: nowrap;
 }
 
 #prev, #next {
@@ -257,14 +273,22 @@ footer ul li {
         font-size: 10px;
     }
 
-    .pagination {
-        gap: 40px;
-    }
-
     #next {
         padding-right: 3px;
     }
 
+    #kosong {
+        font-family: "Nunito", "sans-serif";
+        background-color: white;
+        border: none;
+        border-radius: 20px;
+        color: white;
+        padding: 0px 5px;
+        font-size: 8px;
+        width: 50px;
+        cursor: pointer;
+    }
+    
     #btnKirim {
         font-size: 10px;
         width: 65px;
@@ -297,10 +321,6 @@ footer ul li {
 
     th, td {
         font-size: 10px;
-    }
-
-    .pagination {
-        gap: 50px;
     }
 
     #next {
@@ -397,7 +417,6 @@ footer ul li {
     }
     
     .pagination {
-        gap: 45px;
         margin: 20px 0px;
     }
     
@@ -464,11 +483,6 @@ footer ul li {
 
     th, td {
         font-size: 12.5px;
-    }
-
-
-    .pagination {
-        gap: 55px;
     }
 
     #next {
@@ -557,7 +571,6 @@ footer ul li {
     }
     
     .pagination {
-        gap: 75px;
         margin: 20px 0px;
     }
     
@@ -645,7 +658,6 @@ footer ul li {
     }
     
     .pagination {
-        gap: 110px;
         margin: 20px 0px;
     }
 
@@ -748,7 +760,6 @@ footer ul li {
     }
     
     .pagination {
-        gap: 170px;
         margin: 20px 0px;
     }
 

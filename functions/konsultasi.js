@@ -10,7 +10,7 @@ document.getElementById('btnKonsultasi').addEventListener('click', function() {
 });
 
 document.getElementById('btnKonsultasi2').addEventListener('click', function() {
-    window.location.href = "formDataDiri.html";
+    window.location.href = "formDataGejala.html";
 });
 
 document.getElementById('btnKeBeranda').addEventListener('click', function() {
@@ -21,25 +21,10 @@ document.getElementById('btnKeKonsultasi').addEventListener('click', function() 
     window.location.href = "Konsultasi.html";
 });
 
-document.getElementById('btnKeFormDataDiri').addEventListener('click', function() {
-    window.location.href = "formDataDiri.html";
+document.getElementById('btnKeFormDataGejala').addEventListener('click', function() {
+    window.location.href = "formDataGejala.html";
 });
 
-
-document.addEventListener("DOMContentLoaded", function() {
-    let dataDiriSubmitted = false;
-
-    const navButtonFormDataGejala = document.getElementById("btnKeFormDataGejala");
-
-    navButtonFormDataGejala.addEventListener("click", function(event) {
-        if (!dataDiriSubmitted) {
-            alert("Anda harus mengisi form data diri terlebih dahulu.");
-            event.preventDefault();
-        } else {
-            window.location.href = 'formDataGejala.html';
-        }
-    });
-});
 
 document.addEventListener("DOMContentLoaded", function() {
     let dataDiriSubmitted = false;
@@ -68,23 +53,8 @@ document.getElementById('btnKeKonsultasi2').addEventListener('click', function()
     window.location.href = "Konsultasi.html";
 });
 
-document.getElementById('btnKeFormDataDiri2').addEventListener('click', function() {
-    window.location.href = "formDataDiri.html";
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    let dataDiriSubmitted = false;
-
-    const navButtonFormDataGejala = document.getElementById("btnKeFormDataGejala2");
-
-    navButtonFormDataGejala.addEventListener("click", function(event) {
-        if (!dataDiriSubmitted) {
-            alert("Anda harus mengisi form data diri terlebih dahulu.");
-            event.preventDefault();
-        } else {
-            window.location.href = 'formDataGejala.html';
-        }
-    });
+document.getElementById('btnKeFormDataGejala2').addEventListener('click', function() {
+    window.location.href = "formDataGejala.html";
 });
 
 document.addEventListener("DOMContentLoaded", function() {

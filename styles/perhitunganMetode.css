@@ -215,7 +215,7 @@ select {
 .popup {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
@@ -831,7 +831,7 @@ footer ul li {
     }
 
     select {
-        font-size: 16px;
+        font-size: 18px;
     }
     
     #submitJawabanBtn {
@@ -844,7 +844,7 @@ footer ul li {
 
     /* Style untuk Pop Up */
     .popup-content {
-        margin: 10% auto;
+        margin: 4% auto;
         padding: 20px;
         border: 1px solid #888;
         width: 80%;
