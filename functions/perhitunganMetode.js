@@ -10,7 +10,7 @@ document.getElementById('btnKeBeranda').addEventListener('click', function() {
 });
 
 document.getElementById('btnKeKonsultasi').addEventListener('click', function() {
-    window.location.href = "Konsultasi.html";
+    window.location.href = "konsultasi.html";
 });
 
 document.getElementById('btnKeFormDataGejala').addEventListener('click', function() {
@@ -19,16 +19,16 @@ document.getElementById('btnKeFormDataGejala').addEventListener('click', functio
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    let dataDiriSubmitted = false;
+    let dataGejalaSubmitted = false;
 
     const navButtonFormDataGejala = document.getElementById("btnKePerhitunganManual");
 
     navButtonFormDataGejala.addEventListener("click", function(event) {
-        if (!dataDiriSubmitted) {
+        if (!dataGejalaSubmitted) {
             alert("Anda harus mengisi form data gejala terlebih dahulu.");
             event.preventDefault();
         } else {
-            window.location.href = 'formPerhitunganManual.html';
+            window.location.href = 'perhitunganMetode.html';
         }
     });
 });
@@ -42,7 +42,7 @@ document.getElementById('btnKeBeranda2').addEventListener('click', function() {
 });
 
 document.getElementById('btnKeKonsultasi2').addEventListener('click', function() {
-    window.location.href = "Konsultasi.html";
+    window.location.href = "konsultasi.html";
 });
 
 document.getElementById('btnKeFormDataGejala2').addEventListener('click', function() {
@@ -50,16 +50,16 @@ document.getElementById('btnKeFormDataGejala2').addEventListener('click', functi
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    let dataDiriSubmitted = false;
+    let dataGejalaSubmitted = false;
 
     const navButtonFormDataGejala = document.getElementById("btnKePerhitunganManual2");
 
     navButtonFormDataGejala.addEventListener("click", function(event) {
-        if (!dataDiriSubmitted) {
+        if (!dataGejalaSubmitted) {
             alert("Anda harus mengisi form data gejala terlebih dahulu.");
             event.preventDefault();
         } else {
-            window.location.href = 'formPerhitunganManual.html';
+            window.location.href = 'perhitunganMetode.html';
         }
     });
 });
@@ -443,7 +443,7 @@ function updateCfUserInput(kode, value) {
 }
 
 // Fungsi Metode Forward Chaining
-function forwardChaining() {
+function forwardChaining() { 
     let selectedGejala = JSON.parse(localStorage.getItem('selectedGejala')) || [];
     const diagnosisResults = {};
 
@@ -536,9 +536,11 @@ function calculateDiseaseCF() {
     penyakitList.forEach(penyakit => {
         const hasilPerhitunganElement = document.getElementById(`hasilPerhitungan${penyakit.kode}`);
         if (!hasilPerhitunganElement) {
-            console.error(`Hasil perhitungan dengan ID  ${penyakit.kode} tidak ditemukan.`);
+            console.error(`ID  ${penyakit.kode} tidak memiliki kecocokan dengan aturan yang ditetapkan.`);
             return; 
         }
+
+        console.log(`Gejala yang dipilih cocok dengan semua aturan yang ditetapkan`);
 
         const cfTable = hasilPerhitunganElement.closest('table');
         if (!cfTable) {

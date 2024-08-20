@@ -338,24 +338,6 @@ footer ul li {
         font-size: 10px;
     }
 
-    .pagination {
-        gap: 30px;
-        margin: 20px 0px;
-    }
-
-    #next {
-        padding-right: 40px;
-    }
-
-    #prev img, #next img {
-        width: 22px;
-    }
-
-    #btnKirim {
-        font-size: 10px;
-        width: 90px;
-    }
-
     /* Style untuk Footer */
     footer {
         padding: 20px 40px;
@@ -450,6 +432,14 @@ footer ul li {
 
     select {
         font-size: 11px;
+    }
+
+    #submitJawabanBtn {
+        font-size: 12.5px;
+    }
+
+    #btnLihatHasil {
+        font-size: 12.5px;
     }
     
     /* Style untuk Pop Up */

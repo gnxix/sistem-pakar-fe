@@ -9,25 +9,23 @@ document.getElementById("btnKeBeranda").addEventListener("click", function () {
   window.location.href = "landingPage.html";
 });
 
-document
-  .getElementById("btnKeKonsultasi")
-  .addEventListener("click", function () {
-    window.location.href = "Konsultasi.html";
+document.getElementById("btnKeKonsultasi").addEventListener("click", function () {
+    window.location.href = "konsultasi.html";
   });
 
 document.addEventListener("DOMContentLoaded", function () {
-  let dataDiriSubmitted = false;
+  let dataGejalaSubmitted = false;
 
   const navButtonFormDataGejala = document.getElementById(
     "btnKePerhitunganManual"
   );
 
   navButtonFormDataGejala.addEventListener("click", function (event) {
-    if (!dataDiriSubmitted) {
+    if (!dataGejalaSubmitted) {
       alert("Anda harus mengisi form data gejala terlebih dahulu.");
       event.preventDefault();
     } else {
-      window.location.href = "formPerhitunganManual.html";
+      window.location.href = "perhitunganMetode.html";
     }
   });
 });
@@ -39,7 +37,7 @@ document.getElementById("btnKeBeranda2").addEventListener("click", function () {
 });
 
 document.getElementById("btnKeKonsultasi2").addEventListener("click", function () {
-    window.location.href = "Konsultasi.html";
+    window.location.href = "konsultasi.html";
   }); 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -58,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
 
 const gejalaData = [
   { id: 1, kode: "G01", nama: "Mual" },
@@ -98,9 +97,7 @@ let currentPage = 1;
 const selectedGejala = [];
 
 function populateGejalaTable() {
-  const table = document
-    .getElementById("tabelDataGejala")
-    .getElementsByTagName("tbody")[0];
+  const table = document.getElementById("tabelDataGejala").getElementsByTagName("tbody")[0];
   table.innerHTML = "";
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -170,9 +167,15 @@ function handleGejalaSelection(gejala, isSelected) {
 }
 
 document.getElementById("btnKirim").addEventListener("click", () => {
-  localStorage.setItem("selectedGejala", JSON.stringify(selectedGejala));
-  window.location.href = "perhitunganMetode.html";
+  if (selectedGejala.length < 3) {
+    alert("Mohon pilih minimal 3 gejala yang anda alami sebelum dikirim.");
+  } else {
+    localStorage.setItem("selectedGejala", JSON.stringify(selectedGejala));
+    alert("Data Gejala berhasil disimpan.");
+    window.location.href = "perhitunganMetode.html";
+  }
 });
+
 
 document.getElementById("prev").addEventListener("click", prevPage);
 document.getElementById("next").addEventListener("click", nextPage);

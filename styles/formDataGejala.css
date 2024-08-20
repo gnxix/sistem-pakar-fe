@@ -134,7 +134,7 @@ main {
     margin: 80px 30px 0px;
 }
 
-main > p {
+.container p {
     font-size: 8px;
 }
 
@@ -188,6 +188,7 @@ th {
 
 #paginationInfo {
     text-wrap: nowrap;
+    font-size: 8px;
 }
 
 #prev, #next {
@@ -265,7 +266,7 @@ footer ul li {
 
 @media (min-width: 375px) {
     /* Style untuk Main */
-    main > p {
+    .container p {
         font-size: 10px;
     }
 
@@ -278,15 +279,11 @@ footer ul li {
     }
 
     #kosong {
-        font-family: "Nunito", "sans-serif";
-        background-color: white;
-        border: none;
-        border-radius: 20px;
-        color: white;
-        padding: 0px 5px;
-        font-size: 8px;
-        width: 50px;
-        cursor: pointer;
+        width: 65px;
+    }
+
+    #paginationInfo {
+        font-size: 10px;
     }
     
     #btnKirim {
@@ -315,8 +312,8 @@ footer ul li {
         margin: 80px 40px 0px;
     }
 
-    main > p {
-        font-size: 10px;
+    .container p {
+        font-size: 11px;
     }
 
     th, td {
@@ -325,11 +322,6 @@ footer ul li {
 
     #next {
         padding-right: 3px;
-    }
-
-    #btnKirim {
-        font-size: 10px;
-        width: 65px;
     }
 
     /* Style untuk Footer */
@@ -403,7 +395,7 @@ footer ul li {
         margin: 80px 40px 0px;
     }
     
-    main > p {
+    .container p {
         font-size: 12px;
     }
     
@@ -426,6 +418,14 @@ footer ul li {
     
     #prev img, #next img {
         width: 25px;
+    }
+
+    #paginationInfo {
+        font-size: 11px;
+    }
+
+    #kosong {
+        width: 75px;
     }
     
     #btnKirim {
@@ -487,6 +487,14 @@ footer ul li {
 
     #next {
         padding-right: 4px;
+    }
+
+    #paginationInfo {
+        font-size: 12.5px;
+    }
+
+    #kosong {
+        width: 85px;
     }
 
     #btnKirim {
@@ -561,13 +569,13 @@ footer ul li {
         margin: 80px 40px 0px;
     }
     
-    main > p {
-        font-size: 13px;
+    .container p {
+        font-size: 14px;
     }
     
     th, td {
         padding: 5px;
-        font-size: 12px;
+        font-size: 12.5px;
     }
     
     .pagination {
@@ -576,6 +584,14 @@ footer ul li {
     
     #next {
         padding-right: 8px;
+    }
+
+    #paginationInfo {
+        font-size: 12.5px;
+    }
+
+    #kosong {
+        width: 95px;
     }
 
     #btnKirim {
@@ -648,7 +664,7 @@ footer ul li {
         margin: 100px 100px 20px;
     }
     
-    main > p {
+    .container p {
         font-size: 14px;
     }
     
@@ -668,10 +684,17 @@ footer ul li {
     #next {
         padding-right: 10px;
     }
-
     
     #prev img:hover, #next img:hover {
         border-radius: 20px;
+    }
+
+    #paginationInfo {
+        font-size: 14px;
+    }
+
+    #kosong {
+        width: 100px;
     }
 
     #btnKirim {
@@ -751,7 +774,7 @@ footer ul li {
     
     th, td {
         padding: 5px;
-        font-size: 17px;
+        font-size: 18px;
     }
 
     input{
@@ -773,6 +796,14 @@ footer ul li {
 
     #prev img:hover, #next img:hover {
         border-radius: 20px;
+    }
+
+    #paginationInfo {
+        font-size: 18px;
+    }
+
+    #kosong {
+        width: 130px;
     }
 
     #btnKirim {

@@ -523,6 +523,13 @@ footer ul li {
     }
 }
 
+@media (min-width: 410px) {
+    .barpenyakit ul {
+        width: 298px;
+        font-size: 10px;
+    }
+}
+
 @media (min-width: 425px) {
     body {
         margin-top: 120px;
@@ -582,7 +589,7 @@ footer ul li {
     }
 
     .barpenyakit ul {
-        width: 295px;
+        width: 290px;
         font-size: 11px;
     }
 

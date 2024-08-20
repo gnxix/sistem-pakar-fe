@@ -6,7 +6,7 @@ document.getElementById("burgerButton").addEventListener("click", function() {
 });
 
 document.getElementById('btnKonsultasi').addEventListener('click', function() {
-    window.location.href = "formDataDiri.html";
+    window.location.href = "formDataGejala.html";
 });
 
 document.getElementById('btnKonsultasi2').addEventListener('click', function() {
@@ -18,28 +18,13 @@ document.getElementById('btnKeBeranda').addEventListener('click', function() {
 });
 
 document.getElementById('btnKeKonsultasi').addEventListener('click', function() {
-    window.location.href = "Konsultasi.html";
+    window.location.href = "konsultasi.html";
 });
 
 document.getElementById('btnKeFormDataGejala').addEventListener('click', function() {
     window.location.href = "formDataGejala.html";
 });
 
-
-document.addEventListener("DOMContentLoaded", function() {
-    let dataDiriSubmitted = false;
-
-    const navButtonFormDataGejala = document.getElementById("btnKePerhitunganManual");
-
-    navButtonFormDataGejala.addEventListener("click", function(event) {
-        if (!dataDiriSubmitted) {
-            alert("Anda harus mengisi form data gejala terlebih dahulu.");
-            event.preventDefault();
-        } else {
-            window.location.href = 'formPerhitunganManual.html';
-        }
-    });
-});
 
 
 
@@ -50,7 +35,7 @@ document.getElementById('btnKeBeranda2').addEventListener('click', function() {
 });
 
 document.getElementById('btnKeKonsultasi2').addEventListener('click', function() {
-    window.location.href = "Konsultasi.html";
+    window.location.href = "konsultasi.html";
 });
 
 document.getElementById('btnKeFormDataGejala2').addEventListener('click', function() {
@@ -58,16 +43,16 @@ document.getElementById('btnKeFormDataGejala2').addEventListener('click', functi
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    let dataDiriSubmitted = false;
+    let dataGejalaSubmitted = false;
 
     const navButtonFormDataGejala = document.getElementById("btnKePerhitunganManual2");
 
     navButtonFormDataGejala.addEventListener("click", function(event) {
-        if (!dataDiriSubmitted) {
+        if (!dataGejalaSubmitted) {
             alert("Anda harus mengisi form data gejala terlebih dahulu.");
             event.preventDefault();
         } else {
-            window.location.href = 'formPerhitunganManual.html';
+            window.location.href = 'perhitunganMetode.html';
         }
     });
 });
